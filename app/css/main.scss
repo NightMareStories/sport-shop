@@ -1,3 +1,28 @@
-body {
-    background: red;
+//=================fonts=================
+.font-play-bold {
+    font-family: 'Play-Bold';
+}
+.font-roboto-black {
+    font-family: 'Roboto-Black';
+}
+.font-roboto-bold {
+    font-family: 'Roboto-Bold';
+}
+.font-roboto-light {
+    font-family: 'Roboto-Light';
+}
+.font-roboto-medium {
+    font-family: 'Roboto-Medium';
+}
+.font-roboto-regular {
+    font-family: 'Roboto-Regular';
+}
+.font-UniSansHeavyCAPS {
+    font-family: 'UniSansHeavyCAPS';
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
