@@ -1,4 +1,4 @@
-//=================fonts=================
+/*=================fonts=================*/
 .font-play-bold {
     font-family: 'Play-Bold';
 }
@@ -20,9 +20,25 @@
 .font-UniSansHeavyCAPS {
     font-family: 'UniSansHeavyCAPS';
 }
-
-._container {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 20px;
+* {
+    margin: 0;
+    padding: 0;
 }
+._container {
+        max-width: 1180px;
+        padding: 0 20px;  
+    }
+.header {
+        background: url('../img/header-nav.jpg') top no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;       
+    }
+.top-header__content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+               
+            
+}
+
