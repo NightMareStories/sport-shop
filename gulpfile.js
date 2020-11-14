@@ -38,6 +38,7 @@ function styles_main() {
     return src([
         'app/css/main.' + preprocessor
     ])
+        .pipe(sass())
         .pipe(sourcemaps.init())
         // .pipe(eval(preprocessor)())
         .pipe(concat('main.min.css'))
@@ -53,6 +54,7 @@ function styles_media() {
     return src([
         'app/css/media.' + preprocessor
     ])
+        .pipe(sass())
         .pipe(sourcemaps.init())
         // .pipe(eval(preprocessor)())
         .pipe(concat('media.min.css'))
@@ -68,6 +70,7 @@ function styles_fonts() {
     return src([
         'app/css/fonts/fonts.' + preprocessor
     ])
+        .pipe(sass())
         .pipe(sourcemaps.init())
         // .pipe(eval(preprocessor)())
         .pipe(concat('fonts.min.css'))

@@ -1,0 +1,10 @@
+@media (min-width: 992px) {
+    .menu {
+        &__link:hover {
+            background: #068292;
+            border: 1px solid #068292;
+            padding: 0 20px;
+            border-radius: 12px;
+        }
+    }
+}

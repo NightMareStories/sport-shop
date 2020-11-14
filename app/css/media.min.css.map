@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"media.min.css","sourcesContent":[]}
+{"version":3,"sources":["media.css"],"names":[],"mappings":"AAAA,yBACA,kBACA,kBAAA,CACA,wBAAA,CACA,cAAA,CACA,kBAAA,CAAA","file":"media.min.css","sourcesContent":["@media (min-width: 992px) {\n  .menu__link:hover {\n    background: #068292;\n    border: 1px solid #068292;\n    padding: 0 20px;\n    border-radius: 12px; } }\n"]}

@@ -30,15 +30,42 @@
     }
 .header {
         background: url('../img/header-nav.jpg') top no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;       
-    }
-.top-header__content{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-               
+        .top-header {
+            &__content {
+                display: flex;
+                align-items: center;      
+            }
+            &__column {
+                flex: 0 1 50%;
+            &_logo {
+                align-self: flex-start;
+                padding-top: 25px;
+                flex: 0 0 190px;
+                text-align: center;
+            }
+            .menu {
+                &__list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        flex: 0 1 33.333%;
+                        list-style: none;
+                        
+                    }
+                }
+                &__link {
+                    font-family: 'Play-Bold';
+                    font-size: 14px;
+                    height: 27px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffffff;
+                }
+            }
+            } 
             
-}
+        }
+    }
+
 
