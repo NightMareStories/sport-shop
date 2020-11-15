@@ -1,2 +1,2 @@
-@media (min-width:992px){.menu__link:hover{background:#068292;border:1px solid #068292;padding:0 20px;border-radius:12px}}
+@media (min-width:992px){.menu__link:hover{background:#068292;-webkit-transition:all .3s ease 0s;-o-transition:all .3s ease 0s;transition:all .3s ease 0s;border-radius:20px}}@media (max-width:1180px){.header .bottom-header .actions-header li{margin:0 4.57627vw 0 0}.header .bottom-header .info-header__column{padding:0 4.57627vw 0 0}}
 /*# sourceMappingURL=media.min.css.map */

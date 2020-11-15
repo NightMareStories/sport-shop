@@ -1,23 +1,23 @@
 /*=================fonts=================*/
-.font-play-bold {
+@mixin font-play-bold {
     font-family: 'Play-Bold';
 }
-.font-roboto-black {
+@mixin font-roboto-black {
     font-family: 'Roboto-Black';
 }
-.font-roboto-bold {
+@mixin font-roboto-bold {
     font-family: 'Roboto-Bold';
 }
-.font-roboto-light {
+@mixin font-roboto-light {
     font-family: 'Roboto-Light';
 }
-.font-roboto-medium {
+@mixin font-roboto-medium {
     font-family: 'Roboto-Medium';
 }
-.font-roboto-regular {
+@mixin font-roboto-regular {
     font-family: 'Roboto-Regular';
 }
-.font-UniSansHeavyCAPS {
+@mixin font-UniSansHeavyCAPS {
     font-family: 'UniSansHeavyCAPS';
 }
 * {
@@ -26,14 +26,16 @@
 }
 ._container {
         max-width: 1180px;
-        padding: 0 20px;  
+        padding: 0 20px;
+        margin: auto;
     }
 .header {
         background: url('../img/header-nav.jpg') top no-repeat;
         .top-header {
             &__content {
                 display: flex;
-                align-items: center;      
+                align-items: center; 
+                height: 90px;     
             }
             &__column {
                 flex: 0 1 50%;
@@ -45,26 +47,166 @@
             }
             .menu {
                 &__list {
-                    display: flex;
-                    flex-wrap: wrap;
+                    display: grid;
+                    grid-template-columns: 110px 130px 180px;
                     li {
-                        flex: 0 1 33.333%;
                         list-style: none;
-                        
+                        margin: 1px 0;
                     }
                 }
                 &__link {
-                    font-family: 'Play-Bold';
+                    @include font-play-bold;
+                    white-space: nowrap;
                     font-size: 14px;
-                    height: 27px;
+                    min-height: 27px;
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
                     color: #ffffff;
+                    padding: 2px 22px;
+                }
+            }
+            .contacts-header {
+                display: flex;
+                justify-content: center;
+                &__column {
+                    padding: 0 30px;
+                    border-right: 1px solid #ffffff;
+                    &:last-child {
+                        border: none;
+                    }
+                }
+                &__item {
+                    &_icon {
+                        background: url('../img/icons/phone.png') left no-repeat;
+                        padding: 0px 0px 0px 37px;
+                    }
+                }
+                &__label {
+                    @include font-roboto-light;
+                    color: #ffffff;
+                    font-size: 12px;
+                    margin-bottom: 5px;
+                }
+                &__phone {
+                   @include font-roboto-black;
+                    color: #ffffff;
+                    font-size: 18px;
+                    text-decoration: none;
                 }
             }
             } 
             
+        }
+        .bottom-header {
+            &__content {
+                display: flex;
+                height: 63px;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &__column {
+                flex: 0 1 calc(50% - 95px);
+            }
+            .actions-header {
+                display: flex;
+                align-items: center;
+                li {
+                    @include font-roboto-light;
+                    
+                    list-style: none;
+                    margin: 0px 54px 0px 0px;
+                }
+                span {
+                    font-size: 14px;
+                }
+                &__login {
+                    padding-left: 36px;
+                    background: url('../img/icons/login.png') left no-repeat;
+                    display: inline-block;
+                    line-height: 24px;
+                    color: #999999;
+                    text-decoration: none;
+                    span {
+                        border-bottom: 2px dotted #999999;
+                    }
+                }
+                &__reg {
+                    padding-left: 36px;
+                    background: url('../img/icons/registration.png') left no-repeat;
+                    display: inline-block;
+                    line-height: 24px;
+                    color: #1ab9ce;
+                    text-decoration: none;
+                    span {
+                        border-bottom: 2px dotted #1ab9ce;
+                    }
+                }
+                &__email {
+                    padding-left: 36px;
+                    background: url('../img/icons/mail.png') left no-repeat;
+                    display: inline-block;
+                    line-height: 24px;
+                    color: #1ab9ce;
+                }
+            }
+        }
+        .info-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &__column {
+                @include font-roboto-light;
+                padding: 0px 54px 0px 0px;
+                
+                &:last-child {
+                    padding: 0;
+                }
+            }
+            span {
+                font-size: 14px;
+            }
+            &__callback {
+                padding-left: 36px;
+                background: url('../img/icons/callback.png') left no-repeat;
+                display: inline-block;
+                color: #1ab9ce;
+                text-decoration: none;
+                span {
+                    border-bottom: 2px dotted #1ab9ce;
+                }
+            }
+            &__schedule {
+                padding-left: 36px;
+                color: #999999;
+                background: url('../img/icons/schedule.png') left no-repeat;
+                line-height: 18px;
+                span {
+                   @include font-roboto-black;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+            &__cart {
+                width: 43px;
+                height: 43px;
+                display: inline-block;
+                background: url('../img/icons/cart-blue.png') 0 0 no-repeat;
+                position: relative;
+                span {
+                    padding: 0 11px;
+                    border-radius: 20px;
+                    line-height: 25px;
+                    background: #f68038;
+                    position: absolute;
+                    right: 0;
+                    transform: translate(80%, 0px);
+                    color: #ffffff;
+                    font-size: 18px;
+                    @include font-roboto-bold;
+                }
+            }
         }
     }
 

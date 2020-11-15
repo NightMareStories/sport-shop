@@ -2,9 +2,28 @@
     .menu {
         &__link:hover {
             background: #068292;
-            border: 1px solid #068292;
-            padding: 0 20px;
-            border-radius: 12px;
+            transition: all 0.3s ease 0s;
+            border-radius: 20px;
         }
     }
 }
+
+@media (max-width: 1180px) {
+    .header {
+         .bottom-header {
+            .actions-header {
+                li {
+                    margin: 0px 54 / 1180 * 100vw 0px 0px;
+                 }
+            }
+            .info-header {
+                &__column {
+                    padding: 0px 54 / 1180 * 100vw 0px 0px;
+                }
+            }
+        }
+        
+    }
+}
+       
+   
