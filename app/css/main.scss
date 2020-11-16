@@ -66,6 +66,9 @@
                     padding: 2px 22px;
                 }
             }
+            .icon-menu {
+                display: none;
+            }
             .contacts-header {
                 display: flex;
                 justify-content: center;
@@ -93,6 +96,7 @@
                     color: #ffffff;
                     font-size: 18px;
                     text-decoration: none;
+                    white-space: nowrap;
                 }
             }
             } 
@@ -117,40 +121,39 @@
                     list-style: none;
                     margin: 0px 54px 0px 0px;
                 }
-                span {
-                    font-size: 14px;
-                }
-                &__login {
+                &__item {
                     padding-left: 36px;
-                    background: url('../img/icons/login.png') left no-repeat;
                     display: inline-block;
                     line-height: 24px;
+                    text-decoration: none;
                     color: #999999;
-                    text-decoration: none;
+                    
                     span {
+                        font-size: 14px;
                         border-bottom: 2px dotted #999999;
-                    }
-                }
-                &__reg {
-                    padding-left: 36px;
-                    background: url('../img/icons/registration.png') left no-repeat;
-                    display: inline-block;
-                    line-height: 24px;
-                    color: #1ab9ce;
-                    text-decoration: none;
-                    span {
+                        &:hover {
+                        color: #1ab9ce;
                         border-bottom: 2px dotted #1ab9ce;
+                        
                     }
                 }
-                &__email {
-                    padding-left: 36px;
+                &_login {
+                    background: url('../img/icons/login.png') left no-repeat;
+                }
+                &_reg {
+                    background: url('../img/icons/registration.png') left no-repeat;
+                }
+                &_email {
                     background: url('../img/icons/mail.png') left no-repeat;
-                    display: inline-block;
-                    line-height: 24px;
-                    color: #1ab9ce;
+                    span {
+                        border-bottom: 1px solid;
+                        &:hover {
+                            border-bottom: 1px solid;
+                        }
+                    }
+                    }
                 }
             }
-        }
         .info-header {
             display: flex;
             justify-content: center;
@@ -158,7 +161,6 @@
             &__column {
                 @include font-roboto-light;
                 padding: 0px 54px 0px 0px;
-                
                 &:last-child {
                     padding: 0;
                 }
@@ -201,7 +203,7 @@
                     background: #f68038;
                     position: absolute;
                     right: 0;
-                    transform: translate(80%, 0px);
+                    transform: translate(60%, 0px);
                     color: #ffffff;
                     font-size: 18px;
                     @include font-roboto-bold;
@@ -209,5 +211,6 @@
             }
         }
     }
+}
 
 
