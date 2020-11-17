@@ -161,9 +161,6 @@
             &__column {
                 @include font-roboto-light;
                 padding: 0px 54px 0px 0px;
-                &:last-child {
-                    padding: 0;
-                }
             }
             span {
                 font-size: 14px;
@@ -174,6 +171,7 @@
                 display: inline-block;
                 color: #1ab9ce;
                 text-decoration: none;
+                white-space: nowrap;
                 span {
                     border-bottom: 2px dotted #1ab9ce;
                 }
