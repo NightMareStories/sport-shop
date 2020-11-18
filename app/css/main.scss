@@ -1,25 +1,4 @@
-/*=================fonts=================*/
-@mixin font-play-bold {
-    font-family: 'Play-Bold';
-}
-@mixin font-roboto-black {
-    font-family: 'Roboto-Black';
-}
-@mixin font-roboto-bold {
-    font-family: 'Roboto-Bold';
-}
-@mixin font-roboto-light {
-    font-family: 'Roboto-Light';
-}
-@mixin font-roboto-medium {
-    font-family: 'Roboto-Medium';
-}
-@mixin font-roboto-regular {
-    font-family: 'Roboto-Regular';
-}
-@mixin font-UniSansHeavyCAPS {
-    font-family: 'UniSansHeavyCAPS';
-}
+@import '../css/mixins.scss';
 * {
     margin: 0;
     padding: 0;
@@ -160,7 +139,7 @@
             align-items: center;
             &__column {
                 @include font-roboto-light;
-                padding: 0px 54px 0px 0px;
+                padding: 0px 35px 0px 0px;
             }
             span {
                 font-size: 14px;

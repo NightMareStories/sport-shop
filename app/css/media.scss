@@ -1,3 +1,4 @@
+@import '../css/mixins.scss';
 
 @media (max-width: 1180px) {
     .header {
@@ -97,13 +98,19 @@
                         }
                 }
                 .menu__body {
+                    display: none;
                     position: fixed;
                     height: 100%;
                     width: 100%;
                     top: 0;
                     left: 0;
                     overflow: auto;
-                    display: none;
+                    z-index: 2;
+                    background: #1ab9ce;
+                    padding: 70px 20px 30px 20px;
+                    &._active {
+                        display: block;
+                    }
                 }
                 .contacts-header {
                     flex-direction: column;
@@ -204,8 +211,34 @@
                         display: none;
                     }
                 }
+                    .actions-header {
+                        display: flex;
+                        align-items: center;
+                        li {
+                            @include font-roboto-light;
+                            
+                            list-style: none;
+                            margin: 0px 54px 0px 0px;
+                        }
+                        &__item {
+                            padding-left: 36px;
+                            display: inline-block;
+                            line-height: 24px;
+                            text-decoration: none;
+                            color: #999999;
+                            
+                            span {
+                                font-size: 14px;
+                                border-bottom: 2px dotted #999999;
+                                &:hover {
+                                color: #1ab9ce;
+                                border-bottom: 2px dotted #1ab9ce;
+                        }
+                    }
+                    }
+                }
             }
-        }
+        }   
     }
 }
 @media (min-width: 992px) {

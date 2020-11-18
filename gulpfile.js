@@ -82,6 +82,22 @@ function styles_fonts() {
 
 }
 
+function styles_mixins() {
+    return src([
+        'app/css/mixins.' + preprocessor
+    ])
+        .pipe(sass())
+        .pipe(sourcemaps.init())
+        // .pipe(eval(preprocessor)())
+        .pipe(concat('mixins.min.css'))
+        .pipe(cleanCSS(({ level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ })))
+        .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(dest('app/css'))
+        .pipe(browserSync.stream())
+
+}
+
 function images() {
     return src(['app/img/src/**/*'])
         .pipe(newer('app/img/min_images'))
@@ -111,6 +127,7 @@ function startWatch() {
     watch('app/css/main.' + preprocessor, styles_main);
     watch('app/css/media.' + preprocessor, styles_media);
     watch('app/css/fonts/fonts.' + preprocessor, styles_fonts);
+    watch('app/css/mixins.' + preprocessor, styles_mixins);
     watch('app/index.html').on('change', browserSync.reload);
 }
 
@@ -120,8 +137,9 @@ exports.scripts = scripts;
 exports.styles_main = styles_main;
 exports.styles_media = styles_media;
 exports.styles_fonts = styles_fonts;
+exports.styles_mixins = styles_mixins;
 exports.images = images;
 exports.cleanImages = cleanImages;
 exports.build = series(styles_main, styles_media, styles_fonts, scripts, buildCopy);
 
-exports.default = parallel(styles_main, styles_media, styles_fonts, scripts, browser_sync, startWatch);
+exports.default = parallel(styles_mixins, styles_main, styles_media, styles_fonts, scripts, browser_sync, startWatch);
