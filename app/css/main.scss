@@ -16,14 +16,18 @@
                 align-items: center; 
                 height: 90px;     
             }
+            &__logo {
+                position: relative;
+                z-index: 5;
+                display: inline-block;
+            }
             &__column {
                 flex: 0 1 50%;
-            &_logo {
-                align-self: flex-start;
-                padding-top: 25px;
-                flex: 0 0 190px;
-                text-align: center;
-            }
+                &_logo {
+                    flex: 0 0 190px;
+                    text-align: center;
+                    padding-top: 25px;
+                }
             .menu {
                 &__list {
                     display: grid;
@@ -51,6 +55,8 @@
             .contacts-header {
                 display: flex;
                 justify-content: center;
+                position: relative;
+                z-index: 5;
                 &__column {
                     padding: 0 30px;
                     border-right: 1px solid #ffffff;
@@ -99,6 +105,9 @@
                     
                     list-style: none;
                     margin: 0px 54px 0px 0px;
+                    &:last-child {
+                        margin: 0px;
+                    }
                 }
                 &__item {
                     padding-left: 36px;

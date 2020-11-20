@@ -16,7 +16,7 @@ window.addEventListener('resize', function (event) {
         document.body.clientWidth);
     if (viewport_width < 640) {
         if (!actions.classList.contains('done') && !info.classList.contains('done')) {
-            in_burger.append(actions);
+            in_burger.prepend(actions);
             in_burger.append(info);
             actions.classList.add('done');
             info.classList.add('done');
