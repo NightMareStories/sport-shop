@@ -39,6 +39,7 @@
                 }
                 &__link {
                     @include font-play-bold;
+                    text-decoration-skip-ink: none;
                     white-space: nowrap;
                     font-size: 14px;
                     min-height: 27px;
@@ -93,6 +94,7 @@
                 height: 63px;
                 align-items: center;
                 justify-content: space-between;
+                padding-left: 35px;
             }
             &__column {
                 flex: 0 1 calc(50% - 95px);
