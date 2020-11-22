@@ -9,7 +9,7 @@
         margin: auto;
     }
 .header {
-        background: url('../img/header-nav.jpg') top no-repeat;
+        background: #ffffff url('../img/header-nav.jpg') top no-repeat;
         .top-header {
             &__content {
                 display: flex;
@@ -201,4 +201,100 @@
     }
 }
 
+.page {
+    flex: 1 1 auto;
+    &__container {
+        display: flex;
+    }
+    &__side {
+        flex: 0 0 260px;
+    }
+    &__content {
+        flex: 1 1 auto;
+        padding: 0px 0px 0px 30px;
+    }
+}
+.menu-page {
+    background: url('../img/aside-nav.jpg') top no-repeat;
+    &__header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        @include font-UniSansHeavyCAPS;
+        color: #ffffff;
+        font-size: 30px;
+    }
+    &__burger {
+        flex: 0 0 30px;
+        height: 18px;
+        background: #068292;
+        position: relative;
+        cursor: pointer;
+        z-index: 5;
+        padding: 10px 6px;
+        
+        span {
+            transition: all 0.3s ease 0s;
+            top: calc(50% - 1px);
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+            &:first-child {
+                top: 0px;
+            }
+            &:last-child {
+                top: auto;
+                bottom: 0px;
+            }
+        }
+        &._active {
+            span {
+                transform: scale(0);
+                &:first-child {
+                    transform: rotate(-45deg);
+                    top: calc(50% - 1px);
+                }
+                &:last-child {
+                    transform: rotate(45deg);
+                    top: calc(50% - 1px);
+                }
+            }
+        }
+    }
+    &__lines {
+        height: 16px;
+        position: relative;
+    }
+    &__list{
+        li {
+            list-style: none;
+            border-bottom: 1px solid #1aa7b9;
+        }
+    }
+    &__link {
+        @include font-roboto-light;
+        color: #ffffff;
+        font-size: 12px;
+        text-decoration: none;
+        display: block;
+        padding: 12px 20px;
+        position: relative;
+        &_parent {
+            &::after {
+                content:"";     
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                width: 14px;
+                height: 14px;
+                transform: translate(0px, -50%);
+                background: url("../img/icons/arrow-nav.png");
+            }
+        }
+    }
+}
 

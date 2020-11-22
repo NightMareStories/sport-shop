@@ -194,7 +194,7 @@
 
 @media (max-width: 790px) {
     .header {
-        background: url('../img/header-nav.jpg') 0 0 no-repeat;
+        background: #ffffff url('../img/header-nav.jpg') 0 0 no-repeat;
         .top-header {
             &__logo {
                     width: 100px;
@@ -369,7 +369,18 @@
             }
         }
     }
+    .page {
+        .menu-page {
+            &__link {
+                &:hover {
+                    background: #098494;
+                }
+            }
+        }
+    }
 }
+
+    
 
        
    
