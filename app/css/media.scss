@@ -377,6 +377,14 @@
                 }
             }
         }
+        .submenu-page {
+            &__link {
+                &:hover {
+                    background: #71c7d3;
+                    color: #ffffff;
+                }
+            }
+        }
     }
 }
 
