@@ -50,3 +50,11 @@ window.addEventListener('resize', function (event) {
         info_cart.classList.remove('replaced');
     }
 })
+
+let menuParents = document.querySelectorAll('.menu-page__link_parent');
+
+for (let i = 0; i < menuParents.length; i++) {
+    menuParents[i].addEventListener("mouseenter", function (e) {
+        let item = +this.getAttribute('data-item');
+    })
+}

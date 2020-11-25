@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration-skip-ink: none;
 }
 ._container {
         max-width: 1180px;
@@ -51,7 +52,6 @@
                 }
                 &__link {
                     @include font-play-bold;
-                    text-decoration-skip-ink: none;
                     white-space: nowrap;
                     font-size: 14px;
                     min-height: 27px;
@@ -228,11 +228,13 @@
 }
 .menu-page {
     position: relative;
-    background: url('../img/aside-nav.jpg') top no-repeat;
+    
     &__header {
         padding: 20px;
         display: flex;
         align-items: center;
+    }
+    &__body {
     }
     &__title {
         @include font-UniSansHeavyCAPS;
@@ -282,6 +284,11 @@
         height: 16px;
         position: relative;
     }
+    &__content {
+        background: url('../img/aside-nav.jpg') top no-repeat;
+        position: relative;
+        z-index: 2;
+    }
     &__list{
         li {
             list-style: none;
@@ -310,16 +317,15 @@
         }
     }
     &__submenu {
-        position: absolute;
-        top:0;
-        height: 100%;
-        left: 100%
+       
     }
 }
 .submenu-page {
-    width: 280px;
-    border: 2px solid #098494;
-    background: #ffffff;
+    width: 100%;
+    position: absolute;
+    top:0;
+    height: 100%;
+    left: 0;
     &__menu {
         border-bottom: 1px solid #dedede;
         padding: 20px 0;
@@ -339,6 +345,18 @@
     &__product {
         padding: 0 15px;
     }
+    &__item {
+        border: 2px solid #098494;
+        background: #ffffff;
+        position: absolute;
+        width: 280px;
+        height: 100%;
+        top:0;
+        left: 100%;
+        &._active {
+            left: 100%;
+        }
+    }
 }
 .item-product {
     padding: 15px 0;
@@ -346,13 +364,19 @@
     &__body {
         padding: 0 10px;
     }
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
     &__labels {
         position: absolute;
         left: 15px;
         top: 15px;
     }
     &__label {
-        margin: 0px 0px 10px 0px;
+        margin: 0px 0px 5px 0px;
         @include font-roboto-black;
         font-size: 14px;
         color: #ffffff;
@@ -385,6 +409,7 @@
         margin: 0px 0px 10px 0px;
     }
     &__old-price {
+        flex: 1 1 100%;
         @include font-roboto-light;
         font-size: 18px;
         color: #999999;
@@ -394,6 +419,18 @@
             font-size: 14px;
         }
     }
-
+    &__add {
+        width: 40px;
+        height: 40px;
+        background: url('../img/icons/cart-grey.png') 0 0 no-repeat;
+    }
+    &__price {
+        @include font-roboto-black;
+        font-size: 24px;
+        color: #333333;
+        &::after {
+            font-size: 20px;
+        }
+    }
 }
 

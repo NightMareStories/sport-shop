@@ -385,6 +385,13 @@
                 }
             }
         }
+        .item-product {
+            &__title {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }
 
