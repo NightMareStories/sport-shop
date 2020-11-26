@@ -51,10 +51,20 @@ window.addEventListener('resize', function (event) {
     }
 })
 
-let menuParents = document.querySelectorAll('.menu-page__link_parent');
+let menuParents = document.querySelectorAll('.menu-page__parent');
 
 for (let i = 0; i < menuParents.length; i++) {
-    menuParents[i].addEventListener("mouseenter", function (e) {
-        let item = +this.getAttribute('data-item');
-    })
+    const menuParent = menuParents[i];
+    menuParent.addEventListener("mouseenter", function (e) {
+        menuParent.classList.add('_active');
+    });
+    menuParent.addEventListener("mouseleave", function (e) {
+        menuParent.classList.remove('_active');
+    });
 }
+
+let productBurger = document.querySelector('.menu-page__burger');
+
+productBurger.addEventListener("click", function (e) {
+    productBurger.classList.toggle('_active');
+})
