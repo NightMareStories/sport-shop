@@ -54,7 +54,7 @@ window.addEventListener('resize', function (event) {
 let menuParents = document.querySelectorAll('.menu-page__parent');
 
 for (let i = 0; i < menuParents.length; i++) {
-    const menuParent = menuParents[i];
+    let menuParent = menuParents[i];
     menuParent.addEventListener("mouseenter", function (e) {
         menuParent.classList.add('_active');
     });
@@ -64,7 +64,9 @@ for (let i = 0; i < menuParents.length; i++) {
 }
 
 let productBurger = document.querySelector('.menu-page__burger');
+let productBody = document.querySelector('.menu-page__body');
 
 productBurger.addEventListener("click", function (e) {
     productBurger.classList.toggle('_active');
+    productBody.classList.toggle('_active');
 })
