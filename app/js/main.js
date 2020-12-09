@@ -70,3 +70,37 @@ productBurger.addEventListener("click", function (e) {
     productBurger.classList.toggle('_active');
     productBody.classList.toggle('_active');
 })
+
+let searchSelect = document.querySelector('.search-page__title');
+let searchCategories = document.querySelector('.categories-search');
+searchSelect.addEventListener("click", function (e) {
+    searchSelect.classList.toggle('_active');
+    searchCategories.classList.toggle('_active');
+})
+
+let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
+let count = 0;
+let checkboxSelected = document.querySelector('.lox');
+
+for (let i = 0; i < checkboxCategories.length; i++) {
+    let checkboxItem = checkboxCategories[i];
+    checkboxItem.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (!checkboxItem.classList.contains('_selected')) {
+            checkboxItem.classList.add('_selected');
+            count++;
+            checkboxSelected.textContent = count;
+            // searchSelect.classList.remove('_selected');
+            console.log(count);
+        }
+        else {
+            checkboxItem.classList.remove('_selected');
+            count--;
+            checkboxSelected.textContent = count;
+            searchSelect.classList.add('_selected');
+            console.log(count);
+        }
+
+
+    })
+}
