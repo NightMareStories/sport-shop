@@ -6,6 +6,7 @@
     li {
         list-style: none;
     }
+    user-select: none;
 }
 ._container {
         max-width: 1180px;
@@ -468,14 +469,7 @@
             margin: 0px 13px;
             border-bottom: 1px dashed;
             &:last-child {
-                display: none;
-            }
-        }
-        &._selected {
-            span {
-                &:last-child {
-                    display: flex;
-                }
+                 display: none;
             }
         }
         &::before {
@@ -490,6 +484,14 @@
             height: 10px;
             width: 10px;
             background: url("../img/icons/arrow-search.png") 0 0 no-repeat;
+        }
+        &._selected {
+            span  {
+                display: none;
+                &:last-child {
+                    display: block;
+                }
+            } 
         }
         &._active {
             &::after {
@@ -565,10 +567,10 @@
             &:last-child {
                 margin: 0px 0px 0px 0px;
             }
-        }
-       
+        }  
     }
     &__checkbox {
+        
         .checkbox__input {
             display: none;
             &:checked + .checkbox__text {
@@ -578,11 +580,11 @@
         .checkbox__text {
             cursor: pointer;
             color: #999999;
-           &::before {
+        }
+       
+        &::before {
                 display: none;
             }
-        }
-         
     }
     &._active {
         display: flex;

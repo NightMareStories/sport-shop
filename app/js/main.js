@@ -78,29 +78,49 @@ searchSelect.addEventListener("click", function (e) {
     searchCategories.classList.toggle('_active');
 })
 
+// let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
+// let count = 0;
+// let checkboxSelected = document.querySelector('.search-page__title>span');
+
+// for (let i = 0; i < checkboxCategories.length; i++) {
+//     let checkboxItem = checkboxCategories[i];
+//     checkboxItem.onclick = (e) => {
+//         e.preventDefault();
+//         if (!checkboxItem.classList.contains('_selected')) {
+//             checkboxItem.classList.add('_selected');
+//             count++;
+//             checkboxSelected.textContent = `Выбрано: ${count}`;
+//             searchSelect.classList.add('_selected');
+//         }
+//         else {
+//             checkboxItem.classList.remove('_selected');
+//             count--;
+//             checkboxSelected.textContent = `Выбрано: ${count}`;
+//             if (count == 0) {
+//                 searchSelect.classList.remove('_selected');
+//                 checkboxSelected.textContent = `Везде`;
+//             }
+//         }
+//     }
+// }
+
 let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
-let count = 0;
-let checkboxSelected = document.querySelector('.lox');
+
+let checkboxSelected = document.querySelector('.search-page__title>span');
 
 for (let i = 0; i < checkboxCategories.length; i++) {
     let checkboxItem = checkboxCategories[i];
-    checkboxItem.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (!checkboxItem.classList.contains('_selected')) {
-            checkboxItem.classList.add('_selected');
-            count++;
-            checkboxSelected.textContent = count;
-            // searchSelect.classList.remove('_selected');
-            console.log(count);
+    checkboxItem.addEventListener("change", function (e) {
+        checkboxItem.classList.toggle('_active');
+        let categories = document.querySelectorAll('.categories-search__checkbox._active');
+        console.log(categories);
+        if (categories.length > 0) {
+            searchSelect.classList.add('_selected');
+            let searchCount = document.querySelector('.search-page__count');
+            searchCount.textContent = searchCount.getAttribute('data-text') + categories.length;
         }
         else {
-            checkboxItem.classList.remove('_selected');
-            count--;
-            checkboxSelected.textContent = count;
-            searchSelect.classList.add('_selected');
-            console.log(count);
+            searchSelect.classList.remove('_selected');
         }
-
-
     })
 }
