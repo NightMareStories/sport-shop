@@ -217,7 +217,7 @@
 .page {
     flex: 1 1 auto;
     &__container {
-        display: flex;
+        display: block;
     }
     &__side {
         position: relative;
@@ -225,9 +225,7 @@
         flex: 0 0 260px;
     }
     &__content {
-        min-width: 0;
-        flex: 1 1 auto;
-        padding: 0px 0px 0px 30px;
+        
     }
     &__search {
         position: relative;
@@ -240,13 +238,14 @@
 }
 .menu-page {
     position: relative;
-    background: url('../img/aside-nav.jpg') top no-repeat;
+    background: url('../img/aside-nav.jpg') top repeat;
     &__header {
         padding: 20px;
         display: flex;
         align-items: center;
     }
     &__title {
+        flex: 1 1 auto;
         @include font-UniSansHeavyCAPS;
         color: #ffffff;
         font-size: 30px;
@@ -323,8 +322,7 @@
                     pointer-events: all;
                 }
                 .submenu-page__item {
-                    z-index: 2;
-                    transform: translate(0px,0px);
+                    display: block;
                 }
                 .menu-page__link {
                     background: #098494;
@@ -341,13 +339,7 @@
         position: relative;
     }
     &__submenu {
-        width: 100%;
-        position: absolute;
-        top:0;
-        height: 100%;
-        left: 100%;
-        overflow: hidden;
-        pointer-events: none;
+        
     }
 
 }
@@ -370,15 +362,7 @@
         padding: 0 15px;
     }
     &__item {
-        border: 2px solid #098494;
-        background: #ffffff;
-        position: absolute;
-        // width: 280px;
-        height: 100%;
-        top: 0;
-        left: 0;
-        transition: all 0.3s ease 0s;
-        transform: translate(-100%, 0px);
+       display: none;
     }
 }
 .item-product {

@@ -51,21 +51,36 @@ window.addEventListener('resize', function (event) {
     }
 })
 
-let menuParents = document.querySelectorAll('.menu-page__parent');
-
-for (let i = 0; i < menuParents.length; i++) {
-    let menuParent = menuParents[i];
-    menuParent.addEventListener("mouseenter", function (e) {
-        menuParent.classList.add('_active');
-    });
-    menuParent.addEventListener("mouseleave", function (e) {
-        menuParent.classList.remove('_active');
-    });
-}
 
 let productBurger = document.querySelector('.menu-page__burger');
 let productBody = document.querySelector('.menu-page__body');
 
+window.addEventListener("load", function (e) {
+    let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
+        document.body.clientWidth);
+    if (viewport_width < 992) {
+        let menuParents = document.querySelectorAll('.menu-page__parent>a');
+        for (let i = 0; i < menuParents.length; i++) {
+            let menuParent = menuParents[i];
+            menuParent.addEventListener("click", function (e) {
+                menuParent.parentElement.classList.toggle('_active');
+                e.preventDefault();
+            });
+        }
+    }
+    else {
+        let menuParents = document.querySelectorAll('.menu-page__parent');
+        for (let i = 0; i < menuParents.length; i++) {
+            let menuParent = menuParents[i];
+            menuParent.addEventListener("mouseenter", function (e) {
+                menuParent.classList.add('_active');
+            });
+            menuParent.addEventListener("mouseleave", function (e) {
+                menuParent.classList.remove('_active');
+            });
+        }
+    }
+})
 productBurger.addEventListener("click", function (e) {
     productBurger.classList.toggle('_active');
     productBody.classList.toggle('_active');
@@ -77,32 +92,6 @@ searchSelect.addEventListener("click", function (e) {
     searchSelect.classList.toggle('_active');
     searchCategories.classList.toggle('_active');
 })
-
-// let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
-// let count = 0;
-// let checkboxSelected = document.querySelector('.search-page__title>span');
-
-// for (let i = 0; i < checkboxCategories.length; i++) {
-//     let checkboxItem = checkboxCategories[i];
-//     checkboxItem.onclick = (e) => {
-//         e.preventDefault();
-//         if (!checkboxItem.classList.contains('_selected')) {
-//             checkboxItem.classList.add('_selected');
-//             count++;
-//             checkboxSelected.textContent = `Выбрано: ${count}`;
-//             searchSelect.classList.add('_selected');
-//         }
-//         else {
-//             checkboxItem.classList.remove('_selected');
-//             count--;
-//             checkboxSelected.textContent = `Выбрано: ${count}`;
-//             if (count == 0) {
-//                 searchSelect.classList.remove('_selected');
-//                 checkboxSelected.textContent = `Везде`;
-//             }
-//         }
-//     }
-// }
 
 let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
 

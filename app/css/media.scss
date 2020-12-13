@@ -190,6 +190,38 @@
             }
         }
     }
+    .page {
+        &__side {
+            margin: 0px 0px 30px 0px;
+        }
+        .menu-page {
+            &__link {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            &__parent {
+                &._active {
+                    .menu-page__link {
+                        &::after {
+                            top: 35%;
+                            transform: rotate(90deg);
+                        }
+                }
+                }
+                
+            }
+        }
+        .submenu-page {
+            background-color: #ffffff;
+            &__product {
+                display: none;
+            }
+            &__link {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    }
 }
 
 @media (max-width: 790px) {
@@ -221,7 +253,7 @@
         background: url('../img/header-nav.jpg') 0 -20px no-repeat;
         .top-header {
             &__content{
-                height: 70px;
+                height: 60px;
             }
             &__column {
                 .menu__body {
@@ -348,8 +380,14 @@
                     }
                 }
             }
+        }
+        .bottom-header {
+            &__content {
+                height: 40px;
+            }
         }   
     }
+    
 }
 @media (min-width: 992px) {
     .header {
@@ -370,10 +408,33 @@
         }
     }
     .page {
+        &__container {
+            display: flex;   
+        }
+        &__content {
+            min-width: 0;
+            flex: 1 1 auto;
+            padding: 0px 0px 0px 30px;
+        }
         .menu-page {
             &__link {
                 &:hover {
                     background: #098494;
+                }
+            }
+            &__submenu {
+                width: 100%;
+                position: absolute;
+                top:0;
+                height: 100%;
+                left: 100%;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            &._active {
+                .submenu-page__item {
+                    z-index: 2;
+                    transform: translate(0px,0px);
                 }
             }
         }
@@ -383,6 +444,18 @@
                     background: #71c7d3;
                     color: #ffffff;
                 }
+            }
+            &__item {
+                display: block;
+                border: 2px solid #098494;
+                background: #ffffff;
+                position: absolute;
+                // width: 280px;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transition: all 0.3s ease 0s;
+                transform: translate(-100%, 0px);
             }
         }
         .item-product {
