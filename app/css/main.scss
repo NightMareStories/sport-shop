@@ -221,7 +221,7 @@
     }
     &__side {
         position: relative;
-        z-index: 3;
+        z-index: 4;
         flex: 0 0 260px;
     }
     &__content {
@@ -229,11 +229,14 @@
     }
     &__search {
         position: relative;
-        z-index: 2;
+        z-index: 3;
         margin: 0px 0px 22px 0px;
     }
     &__slider {
         margin: 0px 0px 65px 0px;
+    }
+    &__menu {
+        margin: 0px 0px 30px 0px;
     }
 }
 .menu-page {
@@ -307,6 +310,7 @@
     &__parent {
             .menu-page__link {
                 &::after {
+                    transition: all 0.3s ease 0s;
                     content:"";     
                     position: absolute;
                     top: 50%;
@@ -323,6 +327,7 @@
                 }
                 .submenu-page__item {
                     display: block;
+                    
                 }
                 .menu-page__link {
                     background: #098494;
@@ -569,6 +574,7 @@
         
         .checkbox__input {
             display: none;
+            
             &:checked + .checkbox__text {
                 color: #f68038;
             }
