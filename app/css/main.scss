@@ -6,6 +6,9 @@
     li {
         list-style: none;
     }
+    a {
+        text-decoration: none;
+    }
     user-select: none;
 }
 ._container {
@@ -63,6 +66,7 @@
                     align-items: center;
                     color: #ffffff;
                     padding: 2px 22px;
+                    text-decoration: underline;
                 }
             }
             .icon-menu {
@@ -96,7 +100,6 @@
                    @include font-roboto-black;
                     color: #ffffff;
                     font-size: 18px;
-                    text-decoration: none;
                     white-space: nowrap;
                 }
             }
@@ -128,7 +131,6 @@
                     padding-left: 36px;
                     display: inline-block;
                     line-height: 24px;
-                    text-decoration: none;
                     color: #999999;
                     
                     span {
@@ -173,7 +175,6 @@
                 background: url('../img/icons/callback.png') left no-repeat;
                 display: inline-block;
                 color: #1ab9ce;
-                text-decoration: none;
                 white-space: nowrap;
                 span {
                     border-bottom: 2px dotted #1ab9ce;
@@ -234,6 +235,12 @@
     }
     &__slider {
         margin: 0px 0px 65px 0px;
+    }
+    &__news-side {
+        margin: 0px 0px 75px 0px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
     }
     &__menu {
         margin: 0px 0px 30px 0px;
@@ -338,7 +345,6 @@
         @include font-roboto-light;
         color: #ffffff;
         font-size: 12px;
-        text-decoration: none;
         display: block;
         padding: 12px 20px;
         position: relative;
@@ -357,7 +363,6 @@
     &__link {
         @include font-roboto-light;
         font-size: 12px;
-        text-decoration: none;
         color: #1ab9ce;
         padding: 10px 40px;
         display: block;
@@ -416,7 +421,6 @@
         @include font-roboto-light;
         font-size: 16px;
         color: #36949f;
-        text-decoration: none;
         display: inline-block;
         margin: 0px 0px 10px 0px;
     }
@@ -682,7 +686,6 @@
     }
     &__button {
         border: 3px solid #ffffff;
-        text-decoration: none;
         border-radius: 30px;
         height: 33px;
         display: inline-flex;
@@ -717,6 +720,108 @@
     }
     &__text-3 {
         color: #979797;
+    }
+}
+.side-title {
+    @include font-UniSansHeavyCAPS;
+    font-size: 30px;
+    color: #dadada;
+    letter-spacing: 0.75px;
+}
+.news-side {
+    &__title {
+        display: inline-block;
+        margin: 0px 0px 25px/30px * 1em 0px;
+    }
+    &__item {
+        margin: 0px 0px 45px 0px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+    &__label {
+        @include font-roboto-black;
+        display: inline-block;
+        font-size: 12px;
+        color: #333333;
+        text-transform: uppercase;
+        line-height: 18px;
+        margin: 0px 0px 20px/12px * 1em 0px;
+        
+    }
+    &__body {
+        display: flex;
+    }
+    &__date {
+        flex: 0 0 30px;
+        text-align: center;
+        span {
+            display: block;
+            @include font-roboto-black;
+            font-size: 24px;
+        }
+        @include font-roboto-light;
+        font-size: 18px;
+        color: #d8d8d8;
+    }
+    &__text {
+        @include font-roboto-light;
+        font-size: 12px;
+        color: #666666;
+        padding: 0px 0px 0px 15px;
+        line-height: 18px;
+    }
+}
+.reviews-side {
+    &__title {
+        display: inline-block;
+        margin: 0px 0px 25px/30px * 1em 0px;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 0px 10px 0px;
+    }
+    &__user {
+        @include font-roboto-black;
+        color: #333333;
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 18px;
+    }
+    &__date {
+        @include font-roboto-light;
+        color: #999999;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+
+    }
+    &__item {
+        margin: 0px 0px 40px 0px;
+        display: block;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+    &__body {
+        padding: 14px 8px 14px 30px;
+        position: relative;
+        &::before {
+            @include font-roboto-black;
+            font-size: 44px;
+            content: '"';
+            position: absolute;
+            left: 8px;
+            top: 12px;
+            color: #dadada;
+            line-height: 1;
+
+        }
+        @include font-roboto-light;
+        font-size: 12px;
+        color: #666666;
+        line-height: 18px;
     }
 }
 

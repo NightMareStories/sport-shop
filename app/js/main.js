@@ -113,3 +113,26 @@ for (let i = 0; i < checkboxCategories.length; i++) {
         }
     })
 }
+
+
+let side_in = document.querySelector('.page__content-side-in');
+let side_from = document.querySelector('.page__side');
+
+let side_content = document.querySelector('.page__content-side-from');
+
+
+window.addEventListener('resize', function (event) {
+    let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
+        document.body.clientWidth);
+
+    if (viewport_width < 992) {
+        if (!side_content.classList.contains('replaced')) {
+            side_in.append(side_content);
+            side_content.classList.add('replaced');
+        }
+    }
+    else {
+        side_from.append(side_content);
+        side_content.classList.remove('replaced');
+    }
+})

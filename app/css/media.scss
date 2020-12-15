@@ -349,7 +349,6 @@
                         &__item {
                             display: inline-block;
                             line-height: 24px;
-                            text-decoration: none;
                             color: #999999;
                             span {
                                 font-size: 14px;
@@ -378,7 +377,6 @@
                         background: url('../img/icons/callback.png') left no-repeat;
                         display: inline-block;
                         color: #1ab9ce;
-                        text-decoration: none;
                         white-space: nowrap;
                         span {
                             border-bottom: 2px dotted #1ab9ce;
@@ -505,6 +503,35 @@
                     }
                 }
             }
+        }
+        .side-title {
+            &:hover {
+                color: #1ab9ce;
+            }
+        }
+        .news-side {
+            &__label {
+                &:hover {
+                    color: #fd8322;
+                }
+            }
+        }
+        .reviews-side {
+           &__item {
+               &:hover {
+                   .reviews-side__user,
+                   .reviews-side__date {
+                       color: #1ab9ce;
+                   }
+                   .reviews-side__body {
+                        background: #1ab9ce;
+                        color: #ffffff;
+                        &::before {
+                            color: #64deee;
+                        }
+                   }          
+               }
+           }
         }
     }
     .btn {
