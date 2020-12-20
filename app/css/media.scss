@@ -60,6 +60,11 @@
                 padding: 27px 20px;
             }
         }
+        .item-products {
+            &__column {
+                flex: 0 1 50%;
+            }
+        }
     }
 }
 
@@ -414,6 +419,13 @@
             }
         }   
     }
+    .page {
+        .item-products {
+            &__column {
+                flex: 0 1 100%;
+            }
+        }
+    }
     
 }
 @media (min-width: 992px) {
@@ -489,6 +501,15 @@
             }
         }
         .item-product {
+            &:hover {
+                .item-product__hover {
+                    transform: translate(0px, 0px);
+                }
+                .item-product__title,
+                .item-product__footer {
+                    opacity: 0;
+                }
+            }
             &__title {
                 &:hover {
                     text-decoration: underline;
