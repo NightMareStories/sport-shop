@@ -60,9 +60,28 @@
                 padding: 27px 20px;
             }
         }
-        .item-products {
+        .items-products {
             &__column {
-                flex: 0 1 50%;
+                flex: 1 1 45%;
+            }
+        }
+        .brands-slider {
+            &__body {
+                flex-wrap: wrap;
+            }
+            &__slide {
+                flex: auto;
+                img {
+                    filter: opacity(1);
+                }
+            }
+            &__arrow {
+                &_prev {
+                    left: 15px;
+                }
+                &_next {
+                    right: 15px;
+                }
             }
         }
     }
@@ -235,6 +254,11 @@
                 padding: 10px 20px;
             }
         }
+        .items-products {
+            &__column {
+                flex: 1 1 30%;
+            }
+        }
     }
 }
 
@@ -277,6 +301,15 @@
         .search-page {
             &__select {
                 display: none;
+            }
+        }
+        .brands-slider {
+            &__body {
+                flex-wrap: nowrap;
+                overflow: hidden;
+            }
+            &__slide {
+                flex: 1 0 50%;
             }
         }
     }
@@ -420,9 +453,32 @@
         }   
     }
     .page {
-        .item-products {
+        .items-products {
             &__column {
                 flex: 0 1 100%;
+            }
+        }
+        .products-slider {
+            &__header {
+                display: block;
+            }
+            &__title {
+                text-align: center;
+                margin: 0px 0px 15px 0px;
+            }
+            &__control {
+               align-items: center;
+               justify-content: center;
+            }
+        }
+        .content-mainslider {
+            &__title {
+                font-size: 30px;
+            }
+        }
+        .brands-slider {
+            &__slide {
+                flex: 1 0 100%;
             }
         }
     }
@@ -553,6 +609,15 @@
                    }          
                }
            }
+        }
+        .brands-slider {
+            &__slide {
+                img {
+                    &:hover {
+                        filter: opacity(1);
+                    }
+                }
+            }
         }
     }
     .btn {

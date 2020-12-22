@@ -218,6 +218,7 @@
 .page {
     flex: 1 1 auto;
     &__container {
+        padding: 0px 0px 20px 0px;
         display: block;
     }
     &__side {
@@ -487,7 +488,7 @@
         top: 0;
         left: 0;
         transition: all 0.3s ease 0s;
-        transform: translate(-100%, 0px);
+        transform: translate(-110%, 0px);
     }
 }
 .hover-item-product {
@@ -998,5 +999,55 @@
         }
     }
     
+}
+.brands-slider {
+    border-top: 3px dashed #dadada;
+    border-bottom: 3px dashed #dadada;
+    padding: 25px 0px;
+    &__container {
+        position: relative;
+    }
+    &__body {
+        padding: 0px 40px;
+        display: flex;
+    }
+    &__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 10px;
+        flex: 0 1 33.333%;
+        img {
+            max-width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            filter: opacity(0.3);
+        }
+    }
+    &__arrow {
+        margin: -15px 0px 0px 0px;
+        position: absolute;
+        top: 50%;
+        background: url('../img/icons/arrow-products.png') 0 0 no-repeat;
+        width: 34px;
+        height: 29px;
+        cursor: pointer;
+        &_prev {
+            left: 0;
+            &:hover {
+               transform: rotate(-180deg);
+           }
+        }
+        &_next {
+            right: 0;
+            transform: rotate(-180deg);
+            &:hover {
+                transform: rotate(0);
+            }
+        }
+        &:hover {
+            background: url('../img/icons/arrow-products-hover.png') 0 0 no-repeat;
+        }
+    }
 }
 
