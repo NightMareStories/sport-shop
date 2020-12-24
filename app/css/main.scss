@@ -249,6 +249,9 @@
     &__products {
         
     }
+    &__brands {
+        margin: 0px 0px 32px 0px;
+    }
 }
 .menu-page {
     position: relative;
@@ -1050,4 +1053,70 @@
         }
     }
 }
-
+.text-block {
+    &__row {
+        display: flex;
+    }
+    &__column {
+        padding: 0 30px 0 10px;
+        flex: 0 1 50%;
+        position: relative;
+        p {
+            @include font-roboto-regular;
+            color: #ffffff;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            line-height: 20px;
+            margin: 0px 0px 20px 0px;
+            &:last-child {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+    }
+    &__body {
+        margin: 0px 15px 0px 15px;
+        padding: 40px 35px 60px 35px;
+        background: url('../img/about-text.jpg') 0 0 no-repeat;
+       
+    }
+    &__title {
+        @include font-UniSansHeavyCAPS;
+        font-size: 30px;
+        color: #22b7ca;
+        letter-spacing: 0.75px;
+        margin: 0px 0px 20px 0px;
+    }
+    &__label {
+        @include font-roboto-black;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin: 0px 0px 5px 0px;
+    }
+    &__list {
+        li {
+            @include font-roboto-regular;
+            font-size: 12px;
+            color:#ffffff;
+            line-height: 20px;
+            letter-spacing: 0.4px;
+            margin: 0px 0px 5px 0px;
+            &::before {
+                content: "";
+                display: inline-block;
+                background: url('../img/icons/arrow-about.png') left 1px no-repeat;
+                height: 11px;
+                width: 11px;
+                margin: 0px 17px 0px 7px;
+            }
+            &:last-child {
+                max-width: 73%;
+            }
+        }
+    }
+    &__image {
+        position: absolute;
+        top: 75%;
+        left: 55%;
+    }
+}
