@@ -218,7 +218,6 @@
 .page {
     flex: 1 1 auto;
     &__container {
-        padding: 0px 0px 20px 0px;
         display: block;
     }
     &__side {
@@ -227,7 +226,7 @@
         flex: 0 0 260px;
     }
     &__content {
-        
+        margin: 0px 0px 30px 0px;
     }
     &__search {
         position: relative;
@@ -251,6 +250,9 @@
     }
     &__brands {
         margin: 0px 0px 32px 0px;
+    }
+    &__text {
+        margin: 0px 0px 38px 0px;
     }
 }
 .menu-page {
@@ -1055,12 +1057,10 @@
 }
 .text-block {
     &__row {
-        display: flex;
     }
     &__column {
-        padding: 0 30px 0 10px;
-        flex: 0 1 50%;
         position: relative;
+        margin: 0px 0px 30px 0px;
         p {
             @include font-roboto-regular;
             color: #ffffff;
@@ -1074,9 +1074,9 @@
         }
     }
     &__body {
-        margin: 0px 15px 0px 15px;
-        padding: 40px 35px 60px 35px;
-        background: url('../img/about-text.jpg') 0 0 no-repeat;
+        // margin: 0px 15px 0px 15px;
+        padding: 40px 35px 15px 35px;
+        background: url('../img/about-text.jpg') 0 0 repeat;
        
     }
     &__title {
@@ -1118,5 +1118,39 @@
         position: absolute;
         top: 75%;
         left: 55%;
+    }
+}
+.info-menu {
+    border-top: 3px dashed #dadada;
+    border-bottom: 3px dashed #dadada;
+    padding: 10px 0px;
+    &__body {
+        display: inline-block;
+    }
+    &__line {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #efefef;
+        &:last-child {
+            border: 0;
+        }
+    }
+    &__label {
+        @include font-roboto-black;
+        font-size: 14px;
+        margin: 0px 35px 0px 0px;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        li {
+            margin: 0px 30px 0px 0px;
+        }
+    }
+    &__link {
+        @include font-roboto-light;
+        font-size: 12px;
+        color: #1ab9ce;
     }
 }
