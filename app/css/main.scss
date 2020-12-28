@@ -254,6 +254,9 @@
     &__text {
         margin: 0px 0px 38px 0px;
     }
+    &__info-menu {
+        margin: 0px 0px 38px 0px;
+    }
 }
 .menu-page {
     position: relative;
@@ -1152,5 +1155,110 @@
         @include font-roboto-light;
         font-size: 12px;
         color: #1ab9ce;
+    }
+}
+.footer {
+    &__body {
+        
+    }
+    &__column {
+        margin: 0px 0px 25px 0px;
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+    &__block {
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        border-top: 1px solid #dadada;
+    }
+    &__copy {
+        flex: 1 1 auto;
+        @include font-roboto-light;
+        font-size: 12px;
+        color: #999999;
+    } 
+}
+.block-footer {
+        display: flex;
+        flex: 1 1 auto;
+        padding: 0px 0px 20px 0px;
+        &__column {
+            &:first-child {
+                flex: 0 0 165px;
+            }
+            &:last-child {
+                padding: 0px 0px 0px 45px;
+                flex: 1 1 auto;
+            }
+        }
+        &__phones {
+            background: url('../img/icons/phone-footer.png') left no-repeat;
+            padding: 0px 0px 0px 35px;
+            p {
+                margin: 0px 0px 5px 0px;
+                &:last-child {
+                    margin: 0px 0px 0px 0px;
+                }
+            }
+        }
+        &__phone {
+            @include font-roboto-black;
+            font-size: 14px;
+            color: #333333;
+            
+        }
+}
+.logo-footer {
+    display: inline-block;
+    margin: 0px 0px 30px 0px;
+}
+.widgets-footer {
+        display: flex;
+        //  justify-content: space-around;
+        margin: 0 -15px;
+        &__column {
+            padding: 0px 15px;
+            img {
+                max-width: 100%;
+            }
+        }
+}
+.delivery-footer {
+    &__title {
+        @include font-roboto-black;
+        font-size: 14px;
+        color: #999999;
+        text-transform: uppercase;
+        letter-spacing: 0.35px;
+        margin: 0px 0px 10px 0px;
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        // margin: 0px -15px;
+        align-items: center;
+    }
+    &__item {
+        padding: 0 20px 30px 0;
+        a {
+            filter: grayscale(1);
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+    }
+}
+.social-footer {
+    display: flex;
+    align-items: center;
+    &__item {
+        margin: 0px 0px 0px 10px;
     }
 }
