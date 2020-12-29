@@ -120,19 +120,41 @@ let side_from = document.querySelector('.page__side');
 
 let side_content = document.querySelector('.page__content-side-from');
 
+if (side_content != undefined) {
+    window.addEventListener('resize', function (event) {
+        let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
+            document.body.clientWidth);
 
-window.addEventListener('resize', function (event) {
-    let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
-        document.body.clientWidth);
-
-    if (viewport_width < 992) {
-        if (!side_content.classList.contains('replaced')) {
-            side_in.append(side_content);
-            side_content.classList.add('replaced');
+        if (viewport_width < 992) {
+            if (!side_content.classList.contains('replaced')) {
+                side_in.append(side_content);
+                side_content.classList.add('replaced');
+            }
         }
+        else {
+            side_from.append(side_content);
+            side_content.classList.remove('replaced');
+        }
+    })
+}
+
+
+// var unAnimatedSlider = document.getElementById('slider-animate-false');
+// var setButton = document.getElementById('set-sliders');
+
+let priceSlider = document.querySelector('.price-filter');
+
+noUiSlider.create(priceSlider, {
+    start: [20, 80],
+    // tooltips: [false, wNumb({ decimals: 1 }), true],
+    range: {
+        'min': [0],
+        'max': [100]
     }
-    else {
-        side_from.append(side_content);
-        side_content.classList.remove('replaced');
-    }
-})
+});
+
+// setButton.addEventListener('click', function () {
+//     animatedSlider.noUiSlider.set(60);
+//     unAnimatedSlider.noUiSlider.set(60);
+// });
+import noUiSlider from './noUiSlider-14.6.3/distribute/nouislider.js';
