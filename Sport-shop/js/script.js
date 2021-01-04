@@ -2836,16 +2836,17 @@ if (side_content != undefined) {
 // var unAnimatedSlider = document.getElementById('slider-animate-false');
 // var setButton = document.getElementById('set-sliders');
 
-// let priceSlider = document.querySelector('.price-filter');
+let priceSlider = document.querySelector('.price-filter');
 
-// noUiSlider.create(priceSlider, {
-//     start: [20, 80],
-//     // tooltips: [false, wNumb({ decimals: 1 }), true],
-//     range: {
-//         'min': [0],
-//         'max': [100]
-//     }
-// });
+noUiSlider.create(priceSlider, {
+    start: [0, 100000],
+    connect: true,
+    tooltips: [true, true],
+    range: {
+        'min': [0],
+        'max': [200000]
+    }
+});
 
 // setButton.addEventListener('click', function () {
 //     animatedSlider.noUiSlider.set(60);
