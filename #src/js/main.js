@@ -142,19 +142,31 @@ if (side_content != undefined) {
 // var unAnimatedSlider = document.getElementById('slider-animate-false');
 // var setButton = document.getElementById('set-sliders');
 
-let priceSlider = document.querySelector('.price-filter');
+let priceSlider = document.querySelector('.price-filter__slider');
 
 noUiSlider.create(priceSlider, {
     start: [0, 100000],
     connect: true,
-    tooltips: [true, true],
+    tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
     range: {
         'min': [0],
         'max': [200000]
     }
 });
 
-// setButton.addEventListener('click', function () {
-//     animatedSlider.noUiSlider.set(60);
-//     unAnimatedSlider.noUiSlider.set(60);
-// });
+let priceStart = document.getElementById('price-start');
+let priceEnd = document.getElementById('price-end');
+let nodes = [
+    document.getElementById('price-start'), // 0
+    document.getElementById('price-end')  // 1
+];
+priceSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    // let values = priceSlider.noUiSlider.get();
+    nodes[handle].innerHTML = values[handle];
+});
+priceStart.addEventListener('change', function (e) {
+    priceSlider.noUiSlider.set([this.value, null]);
+});
+priceEnd.addEventListener('change', function (e) {
+    priceSlider.noUiSlider.set([null, this.value]);
+});
