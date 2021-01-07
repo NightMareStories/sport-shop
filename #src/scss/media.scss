@@ -740,6 +740,14 @@
             background-color: #b14f12;
         }
     }
+    .compare-filter {
+        &__remove {
+            &:hover {
+                background: url("../img/icons/remove-item-hover.png") 0 0 no-repeat;
+            }
+            
+        }
+    }
 }
 
     

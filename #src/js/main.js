@@ -1,4 +1,3 @@
-
 document.querySelector('.icon-menu').addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelector('.icon-menu').classList.toggle('_active');
@@ -138,9 +137,8 @@ if (side_content != undefined) {
     })
 }
 
-
-// var unAnimatedSlider = document.getElementById('slider-animate-false');
-// var setButton = document.getElementById('set-sliders');
+//======================================================================================================================
+//---------------------------------------------noUiSlider---------------------------------------------------------------
 
 let priceSlider = document.querySelector('.price-filter__slider');
 
@@ -157,12 +155,14 @@ noUiSlider.create(priceSlider, {
 let priceStart = document.getElementById('price-start');
 let priceEnd = document.getElementById('price-end');
 let nodes = [
-    document.getElementById('price-start'), // 0
-    document.getElementById('price-end')  // 1
+    document.getElementById('price-start'),
+    document.getElementById('price-end')
 ];
+let formatPrice = wNumb({
+    decimals: 0
+})
 priceSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
-    // let values = priceSlider.noUiSlider.get();
-    nodes[handle].innerHTML = values[handle];
+    nodes[handle].value = formatPrice.to(+values[handle]);
 });
 priceStart.addEventListener('change', function (e) {
     priceSlider.noUiSlider.set([this.value, null]);

@@ -25,7 +25,56 @@ height: 39px;
 
 }
 }
+.checkbox {
+    position: relative;
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        &:checked + .checkbox__text:before {
+            border: 2px solid #009aaf;
+        }
+        &:checked + .checkbox__text:after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 9px;
+            height: 9px;
+            background-color: #53b5de;
+        }
 
+    }
+    &__text {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        font-size: 12px;
+        columns: #666666;
+        line-height: calc(15/12);
+        cursor: pointer;
+        &::before {
+            content: '';
+            align-self: flex-start;
+            margin: 0px 14px 0px 0px;
+            flex: 0 0 15px;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            border: 2px solid #dadada;
+        }
+        &:checked {
+            &::before {
+                background-color: aqua;
+                border: 2px solid #009aaf;
+            }
+        }
+    }
+}
 ._container {
         max-width: 1180px;
         padding: 0 20px;
@@ -1274,17 +1323,46 @@ height: 39px;
     }
 }
 .section-filter {
-    padding: 30px 15px;
+    padding: 20px 15px;
     border-bottom: 1px solid #72c9d4;
     &__title {
         font-family: 'Roboto-Black';
         font-size: 16px;
         color: #36949f;
         line-height: 22px;
-        margin: 0px 0px 15px 0px;
         min-height: 30px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        &._spoller {
+            cursor: pointer;
+            &::after {
+                content: '';
+                border-radius: 50%;
+                flex: 0 0 30px;
+                width: 30px;
+                height: 30px;
+                border: 1px solid #72c9d4;
+                background: url('../img/icons/arrow-filter.png') center no-repeat;
+            }
+            &._active {
+                &::after {
+                    border: 1px solid #cbcbcb;
+                    background: url('../img/icons/arrow-filter-push.png') center no-repeat;
+                }
+            }
+        }
+        
+    }
+    &__body {
+        padding: 15px 0px 0px 0px;
+    }
+    &__checkbox {
+        display: block;
+        margin: 0px 0px 15px 0px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
     }
 }
 .price-filter {
@@ -1370,7 +1448,7 @@ height: 39px;
     margin: 0px -15px;
     &__column {
         flex: 0 1 50%;
-        padding: 0px 50px 0px 15px;
+        padding: 0px 45px 0px 15px;
         display: flex;
         align-items: center;
     }
@@ -1388,5 +1466,65 @@ height: 39px;
             height: 20px;
             font-size: 12px;
         }
+    }
+}
+.compare-filter {
+    &__items {
+        padding: 0px 13px 0px 0px;
+        margin: 0px 0px 20px 0px;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 0px 10px 0px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+    &__link {
+        line-height: 16px;
+        font-family: 'Roboto-Light';
+        font-size: 12px;
+        color: #1ab9ce;
+        text-decoration: underline;
+    }
+    &__remove {
+        flex: 0 0 10px;
+        margin: 3px 0px 0px 5px;
+        width: 10px;
+        height: 10px;
+        background: url("../img/icons/remove-item.png") 0 0 no-repeat;
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 33px;
+        background-color: #1ab9ce;
+        padding: 0px 15px;
+        border-radius: 25px;
+        span {
+            
+            background: url("../img/icons/compare-icon.png") left no-repeat;
+            display: inline-block;
+            line-height: 33px;
+            padding: 0px 0px 0px 30px;
+            text-transform: uppercase;
+            font-family: 'Roboto-Black';
+            font-size: 14px;
+            color: #ffffff;
+
+        }
+    }
+    &__clean {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: #e6e6e6 url('../img/icons/trash-icon.png') center no-repeat;
     }
 }
