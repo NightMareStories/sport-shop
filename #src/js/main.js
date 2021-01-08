@@ -170,3 +170,18 @@ priceStart.addEventListener('change', function (e) {
 priceEnd.addEventListener('change', function (e) {
     priceSlider.noUiSlider.set([null, this.value]);
 });
+
+//======================================================================================================================
+
+//======================================================================================================================
+//--------------------------------- Скрыть и показать секцию фильтрации товара -----------------------------------------
+
+let filterTitle = document.querySelectorAll('._spoller');
+filterTitle.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+        e.target.parentElement.classList.toggle('_active');
+        this.classList.toggle('_active');
+    })
+});
+
+//=======================================================================================================================
