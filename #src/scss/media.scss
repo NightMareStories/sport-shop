@@ -290,6 +290,20 @@
             }
         }
     }
+    .filter {
+        &__title {
+            padding: 25px 15px 25px 15px;
+            &._active {
+                padding: 25px 15px 5px 15px;
+            }
+        }
+        &__content {
+            display: none;
+            &._active {
+                display: block;
+            }
+        }
+    }
 }
 
 @media (max-width: 790px) {
@@ -738,6 +752,16 @@
     .btn {
         &:hover {
             background-color: #b14f12;
+        }
+        &._grey {
+            &:hover {
+                background-color: #bbbbbb;
+            }
+        }
+    }
+    .filter{
+        &__content {
+            display: block;
         }
     }
     .compare-filter {

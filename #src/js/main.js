@@ -113,7 +113,6 @@ for (let i = 0; i < checkboxCategories.length; i++) {
     })
 }
 
-
 let side_in = document.querySelector('.page__content-side-in');
 let side_from = document.querySelector('.page__side');
 
@@ -178,10 +177,34 @@ priceEnd.addEventListener('change', function (e) {
 
 let filterTitle = document.querySelectorAll('._spoller');
 filterTitle.forEach(function (item) {
-    item.addEventListener("click", function (e) {
+    item.addEventListener('click', function (e) {
         e.target.parentElement.classList.toggle('_active');
         this.classList.toggle('_active');
     })
+});
+
+//=======================================================================================================================
+
+//=======================================================================================================================
+//-------------------------- Скрыть и показать фильтрацию товара на мобильном устройстве --------------------------------
+
+let filterMobile = document.querySelector('.filter__title');
+let filterContent = document.querySelector('.filter__content');
+window.addEventListener('resize', function (e) {
+
+    let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
+        document.body.clientWidth);
+    if (viewport_width < 992) {
+        filterMobile.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (!filterContent.classList.contains('_active')) {
+                filterContent.classList.add('_active');
+            }
+            else {
+                filterContent.classList.remove('_active');
+            }
+        });
+    }
 });
 
 //=======================================================================================================================
