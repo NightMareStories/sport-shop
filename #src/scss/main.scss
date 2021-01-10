@@ -27,6 +27,7 @@ height: 39px;
 }
 }
 
+
 ._container {
         max-width: 1180px;
         padding: 0 20px;
@@ -1578,4 +1579,87 @@ height: 39px;
         height: 40px;
         background: #e6e6e6 url('../img/icons/trash-icon.png') center no-repeat;
     }
+}
+.catalog {
+    &__title {
+        font-family: 'UniSansHeavyCAPS';
+        font-size: 30px;
+        color: #dadada;
+        letter-spacing: 0.75px;
+        line-height: 130%;
+        margin: 0px 0px 20px 0px;
+    }
+}
+.actions-catalog {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+.order-catalog {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    &__label {
+        font-family: 'Roboto-Black';
+        font-size: 14px;
+        color: #333333;
+        margin: 0px 20px 0px 0px;
+    }
+    &__select {
+        position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 11px;
+            height: 7px;
+            background: url('../img/icons/arrow-select.png') center / 100% no-repeat;
+        }
+    }
+}
+.view-catalog {
+    display: flex;
+    &__item {
+        cursor: pointer;
+        width: 36px;
+        height: 36px;
+        margin: 0px 0px 0px 8px;
+        &_grid {
+            background: url('../img/icons/grid-icon.png') center no-repeat;
+            &._active {
+                background: url('../img/icons/grid-icon-active.png') center no-repeat;
+            }
+        }
+        &_list {
+            background: url('../img/icons/list-icon.png') center no-repeat;
+            &._active {
+                background: url('../img/icons/list-icon-active.png') center no-repeat;
+            }
+        }
+    }
+}
+.select {
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: none;
+    height: 30px;
+    padding: 0px 15px;
+    
+    cursor: pointer;
+    font-family: 'Roboto-Light';
+        font-size: 14px;
+        color: #0097ac;
+      
+    
+    &__item {
+        
+        
+    }    
 }

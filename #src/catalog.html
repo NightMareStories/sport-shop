@@ -608,16 +608,22 @@
                     <div class="catalog__actions actions-catalog">
                         <div class="actions-catalog__order order-catalog">
                             <div class="order-catalog__label">Сортировать по:</div>
-                            <select name="form[]" class="form">
-                                <option value="1" selected="selected">По умолчанию</option>
-                                <option value="2">Цене по возрастанию</option>
-                                <option value="3">Цене по убыванию</option>
-                                <option value="4">Акциям и скидкам</option>
-                                <option value="5">Отзывам</option>
-                            </select>
+                            <div class="order-catalog__select">
+                                <select name="" class="select">
+                                    <option value="1" selected="selected" class="select__item">По умолчанию</option>
+                                    <option value="2" class="select__item">Цене по
+                                        возрастанию</option>
+                                    <option value="3" class="select__item">Цене по
+                                        убыванию</option>
+                                    <option value="4" class="select__item">Акциям и
+                                        скидкам</option>
+                                    <option value="5" class="select__item">Отзывам
+                                    </option>
+                                </select>
+                            </div>
                         </div>
                         <div class="actions-catalog__view view-catalog">
-                            <div class="view-catalog__item view-catalog__item_grid"></div>
+                            <div class="view-catalog__item view-catalog__item_grid _active"></div>
                             <div class="view-catalog__item view-catalog__item_list"></div>
                         </div>
                     </div>

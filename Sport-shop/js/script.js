@@ -208,7 +208,36 @@ window.addEventListener('resize', function (e) {
     }
 });
 
-//=======================================================================================================================;
+//=======================================================================================================================
+
+//=======================================================================================================================
+//---------------------------------- Сортировка товара плиткой или списком ----------------------------------------------
+
+
+
+let viewGrid = document.querySelector('.view-catalog__item_grid');
+let viewList = document.querySelector('.view-catalog__item_list');
+
+viewGrid.addEventListener('click', function (e) {
+    if (!viewGrid.classList.contains('_active') && viewList.classList.contains('_active')) {
+        viewList.classList.remove('_active');
+        viewGrid.classList.add('_active');
+
+    }
+});
+
+viewList.addEventListener('click', function (e) {
+    if (!viewList.classList.contains('_active') && viewGrid.classList.contains('_active')) {
+        viewGrid.classList.remove('_active');
+        viewList.classList.add('_active');
+    }
+});
+
+//=======================================================================================================================
+
+
+
+;
 
 
 

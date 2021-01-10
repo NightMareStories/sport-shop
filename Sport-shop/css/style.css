@@ -2122,6 +2122,113 @@
   background: #e6e6e6 url("../img/icons/trash-icon.png") center no-repeat;
 }
 
+.catalog__title {
+  font-family: 'UniSansHeavyCAPS';
+  font-size: 30px;
+  color: #dadada;
+  letter-spacing: 0.75px;
+  line-height: 130%;
+  margin: 0px 0px 20px 0px;
+}
+
+.actions-catalog {
+  background-color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.order-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.order-catalog__label {
+  font-family: 'Roboto-Black';
+  font-size: 14px;
+  color: #333333;
+  margin: 0px 20px 0px 0px;
+}
+
+.order-catalog__select {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.order-catalog__select::before {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 7px;
+  background: url("../img/icons/arrow-select.png") center/100% no-repeat;
+}
+
+.view-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.view-catalog__item {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  margin: 0px 0px 0px 8px;
+}
+
+.view-catalog__item_grid {
+  background: url("../img/icons/grid-icon.png") center no-repeat;
+}
+
+.view-catalog__item_grid._active {
+  background: url("../img/icons/grid-icon-active.png") center no-repeat;
+}
+
+.view-catalog__item_list {
+  background: url("../img/icons/list-icon.png") center no-repeat;
+}
+
+.view-catalog__item_list._active {
+  background: url("../img/icons/list-icon-active.png") center no-repeat;
+}
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: none;
+  height: 30px;
+  padding: 0px 15px;
+  cursor: pointer;
+  font-family: 'Roboto-Light';
+  font-size: 14px;
+  color: #0097ac;
+}
+
 @supports (-webkit-appearance:none) {
   .header {
     background: #ffffff url("../img/header-nav.webp") top no-repeat;
@@ -2233,6 +2340,26 @@
 
   .compare-filter__clean {
     background: #e6e6e6 url("../img/icons/trash-icon.webp") center no-repeat;
+  }
+
+  .order-catalog__select::before {
+    background: url("../img/icons/arrow-select.webp") center/100% no-repeat;
+  }
+
+  .view-catalog__item_grid {
+    background: url("../img/icons/grid-icon.webp") center no-repeat;
+  }
+
+  .view-catalog__item_grid._active {
+    background: url("../img/icons/grid-icon-active.webp") center no-repeat;
+  }
+
+  .view-catalog__item_list {
+    background: url("../img/icons/list-icon.webp") center no-repeat;
+  }
+
+  .view-catalog__item_list._active {
+    background: url("../img/icons/list-icon-active.webp") center no-repeat;
   }
 }
 
