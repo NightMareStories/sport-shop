@@ -576,6 +576,9 @@ height: 39px;
         height: 57px;
         margin: 0px auto 25px auto;
         display: block;
+        &_catalog {
+            margin: 0;
+        }
     }
     &__footer {
         display: flex;
@@ -594,6 +597,22 @@ height: 39px;
         &::after {
             font-size: 14px;
         }
+        &_catalog {
+            margin: 0;
+        }
+    }
+    &__compare {
+        background: url('../img/icons/compare-icon.png') left no-repeat;
+        padding: 0px 0px 0px 33px;
+        display: inline-block;
+        line-height: 21px;
+        span {
+            color: #ffffff;
+            font-family: 'Roboto-Light';
+            font-size: 14px;
+            border-bottom: 1px dashed;
+        }
+        
     }
     &__price {
         font-family: 'Roboto-Black';
@@ -1589,6 +1608,9 @@ height: 39px;
         line-height: 130%;
         margin: 0px 0px 20px 0px;
     }
+    &__actions {
+        margin: 0px 0px 15px 0px;
+    }
 }
 .actions-catalog {
     background-color: #f3f3f3;
@@ -1607,18 +1629,7 @@ height: 39px;
         margin: 0px 20px 0px 0px;
     }
     &__select {
-        position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-        &::before {
-            content: '';
-            display: inline-block;
-            width: 11px;
-            height: 7px;
-            background: url('../img/icons/arrow-select.png') center / 100% no-repeat;
-        }
+        
     }
 }
 .view-catalog {
@@ -1643,23 +1654,106 @@ height: 39px;
     }
 }
 .select {
-    
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    // position: relative;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // flex-direction: row-reverse;
+    //     &::before {
+    //         content: '';
+    //         display: inline-block;
+    //         width: 11px;
+    //         height: 7px;
+    //         background: url('../img/icons/arrow-select.png') center / 100% no-repeat;
+    //     }
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
     border: 0;
     outline: none;
     height: 30px;
     padding: 0px 15px;
-    
     cursor: pointer;
     font-family: 'Roboto-Light';
+    font-size: 14px;
+    color: #0097ac; 
+}
+.navi-catalog {
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_top {
+        margin: 0px 0px 23px 0px;
+    }
+
+}
+.show-catalog {
+    display: flex;
+    align-items: center;
+    &__label {
+        font-family: 'Roboto-Black';
         font-size: 14px;
-        color: #0097ac;
-      
-    
+        color: #333333;
+        margin: 0px 20px 0px 0px;
+    }
+}
+.pagging-catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__arrow {
+        width: 30px;
+        height: 26px;
+        cursor: pointer;
+        background: url('../img/icons/arrow-none.png') 0 0 / 100% no-repeat;
+        &:first-child {
+            &:hover {
+                background: url('../img/icons/arrow-products.png') 0 0 / 100% no-repeat;
+            }
+            
+        }
+        &:last-child {
+            transform: rotate(-180deg);
+            &:hover {
+                background: url('../img/icons/arrow-products.png') 0 0 / 100% no-repeat;
+            }
+        }
+    }
+    &__list {
+        margin: 0px 35px;
+        display: flex;
+        li {
+            padding: 0px 5px;
+        }
+    }
     &__item {
+        width: 33px;
+        height: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-family: 'Roboto-Black';
+        font-size: 18px;
+        color: #333333;
         
-        
-    }    
+        &._active {
+            background-color: #fd8424;
+            color: #ffffff;
+        }
+    }
+    
+}
+.show {
+    border: 2px solid #f3f3f3;
+    outline: none;
+    height: 30px;
+    padding: 0px 5px;
+    cursor: pointer;
+    font-family: 'Roboto-Black';
+    font-size: 16px;
+    color: #999999; 
 }

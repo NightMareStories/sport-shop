@@ -213,8 +213,6 @@ window.addEventListener('resize', function (e) {
 //=======================================================================================================================
 //---------------------------------- Сортировка товара плиткой или списком ----------------------------------------------
 
-
-
 let viewGrid = document.querySelector('.view-catalog__item_grid');
 let viewList = document.querySelector('.view-catalog__item_list');
 
