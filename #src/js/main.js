@@ -2,7 +2,7 @@ document.querySelector('.icon-menu').addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelector('.icon-menu').classList.toggle('_active');
     document.querySelector('.menu__body').classList.toggle('_active');
-})
+});
 
 let in_burger = document.querySelector('.menu__body');
 let in_header = document.querySelector('.contacts-header');
@@ -141,34 +141,36 @@ if (side_content != undefined) {
 
 let priceSlider = document.querySelector('.price-filter__slider');
 
-noUiSlider.create(priceSlider, {
-    start: [0, 100000],
-    connect: true,
-    tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
-    range: {
-        'min': [0],
-        'max': [200000]
-    }
-});
+if (priceSlider != undefined) {
+    noUiSlider.create(priceSlider, {
+        start: [0, 100000],
+        connect: true,
+        tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
+        range: {
+            'min': [0],
+            'max': [200000]
+        }
+    });
 
-let priceStart = document.getElementById('price-start');
-let priceEnd = document.getElementById('price-end');
-let nodes = [
-    document.getElementById('price-start'),
-    document.getElementById('price-end')
-];
-let formatPrice = wNumb({
-    decimals: 0
-})
-priceSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
-    nodes[handle].value = formatPrice.to(+values[handle]);
-});
-priceStart.addEventListener('change', function (e) {
-    priceSlider.noUiSlider.set([this.value, null]);
-});
-priceEnd.addEventListener('change', function (e) {
-    priceSlider.noUiSlider.set([null, this.value]);
-});
+    let priceStart = document.getElementById('price-start');
+    let priceEnd = document.getElementById('price-end');
+    let nodes = [
+        document.getElementById('price-start'),
+        document.getElementById('price-end')
+    ];
+    let formatPrice = wNumb({
+        decimals: 0
+    })
+    priceSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+        nodes[handle].value = formatPrice.to(+values[handle]);
+    });
+    priceStart.addEventListener('change', function (e) {
+        priceSlider.noUiSlider.set([this.value, null]);
+    });
+    priceEnd.addEventListener('change', function (e) {
+        priceSlider.noUiSlider.set([null, this.value]);
+    });
+}
 
 //======================================================================================================================
 
@@ -176,12 +178,16 @@ priceEnd.addEventListener('change', function (e) {
 //--------------------------------- Скрыть и показать секцию фильтрации товара -----------------------------------------
 
 let filterTitle = document.querySelectorAll('._spoller');
-filterTitle.forEach(function (item) {
-    item.addEventListener('click', function (e) {
-        e.target.parentElement.classList.toggle('_active');
-        this.classList.toggle('_active');
-    })
-});
+
+if (filterTitle != undefined) {
+    filterTitle.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            e.target.parentElement.classList.toggle('_active');
+            this.classList.toggle('_active');
+        })
+    });
+}
+
 
 //=======================================================================================================================
 
@@ -190,22 +196,25 @@ filterTitle.forEach(function (item) {
 
 let filterMobile = document.querySelector('.filter__title');
 let filterContent = document.querySelector('.filter__content');
-window.addEventListener('resize', function (e) {
 
-    let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
-        document.body.clientWidth);
-    if (viewport_width < 992) {
-        filterMobile.addEventListener('click', function (e) {
-            e.preventDefault();
-            if (!filterContent.classList.contains('_active')) {
-                filterContent.classList.add('_active');
-            }
-            else {
-                filterContent.classList.remove('_active');
-            }
-        });
-    }
-});
+if (filterMobile != undefined && filterContent != undefined) {
+    window.addEventListener('resize', function (e) {
+
+        let viewport_width = Math.max(widthContenArea1 = window.innerWidth || document.documentElement.clientWidth ||
+            document.body.clientWidth);
+        if (viewport_width < 992) {
+            filterMobile.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (!filterContent.classList.contains('_active')) {
+                    filterContent.classList.add('_active');
+                }
+                else {
+                    filterContent.classList.remove('_active');
+                }
+            });
+        }
+    });
+}
 
 //=======================================================================================================================
 
@@ -215,21 +224,22 @@ window.addEventListener('resize', function (e) {
 let viewGrid = document.querySelector('.view-catalog__item_grid');
 let viewList = document.querySelector('.view-catalog__item_list');
 
-viewGrid.addEventListener('click', function (e) {
-    if (!viewGrid.classList.contains('_active') && viewList.classList.contains('_active')) {
-        viewList.classList.remove('_active');
-        viewGrid.classList.add('_active');
+if (viewGrid != undefined && viewList != undefined) {
+    viewGrid.addEventListener('click', function (e) {
+        if (!viewGrid.classList.contains('_active') && viewList.classList.contains('_active')) {
+            viewList.classList.remove('_active');
+            viewGrid.classList.add('_active');
 
-    }
-});
+        }
+    });
 
-viewList.addEventListener('click', function (e) {
-    if (!viewList.classList.contains('_active') && viewGrid.classList.contains('_active')) {
-        viewGrid.classList.remove('_active');
-        viewList.classList.add('_active');
-    }
-});
-
+    viewList.addEventListener('click', function (e) {
+        if (!viewList.classList.contains('_active') && viewGrid.classList.contains('_active')) {
+            viewGrid.classList.remove('_active');
+            viewList.classList.add('_active');
+        }
+    });
+}
 //=======================================================================================================================
 
 
