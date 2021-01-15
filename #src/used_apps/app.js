@@ -1,4 +1,4 @@
-@@include('swiper-bundle.min.js');
+@@include('swiper-bundle.js');
 @@include('wNumb.js');
 @@include('nouislider.js');
 

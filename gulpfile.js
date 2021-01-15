@@ -13,8 +13,8 @@ let path = {
     },
     src: {
         html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
-        css: [source_folder + '/scss/style.scss', source_folder + '/scss/app.scss'],
-        js: [source_folder + '/js/script.js', source_folder + '/js/app.js'],
+        css: [[source_folder + '/scss/style.scss'], [source_folder + '/used_apps/**/*.css']],
+        js: [source_folder + '/js/script.js', source_folder + '/used_apps/app.js'],
         img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
         fonts: source_folder + '/fonts/*.ttf'
     },
@@ -64,7 +64,7 @@ function html() {
         .pipe(browsersync.stream())
 }
 function css() {
-    return src(path.src.css)
+    return src(path.src.css[0])
         .pipe(scss({
             outputStyle: 'expanded'
         }))
@@ -74,6 +74,9 @@ function css() {
         }))
         .pipe(webpcss())
         .pipe(group_media())
+        .pipe(dest(path.build.css))
+
+        .pipe(src(path.src.css[1]))
         .pipe(dest(path.build.css))
         .pipe(clean_css())
         .pipe(rename({
