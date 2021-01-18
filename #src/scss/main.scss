@@ -811,16 +811,22 @@ height: 39px;
         position: relative;
         z-index: 2;
         justify-content: center;
-        margin: -27.5px 23px 0px 23px;
+        margin: -20px 0px 0px 0px;
         counter-reset: item;
-        span {
+        .swiper-pagination-bullet {
+            margin: 0px 23px;
             width: 55px;
             height: 55px;
             border-radius: 50%;
             border: 2px solid #ffffff;
             position: relative;
             overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             &::after {
+                opacity: 0;
+                transition: all 0.3s ease 0s;
                 font-family: 'Roboto-Black';
                 font-size: 16px;
                 position: absolute;
@@ -835,6 +841,11 @@ height: 39px;
                 color: #ffffff;
                 counter-increment: item;
                 content: counter(item);
+            }
+        }
+        .swiper-pagination-bullet-active {
+            &::after {
+                opacity: 1;
             }
         }
     }

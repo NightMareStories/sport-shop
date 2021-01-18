@@ -246,18 +246,30 @@ if (viewGrid != undefined && viewList != undefined) {
 //=======================================================================================================================
 //----------------------------------------------- SwiperSlider ----------------------------------------------------------
 
-new Swiper('.images-product__mainsliders', {
-    observer: true,
-    observeParents: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 800,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-    },
-});
+if (document.querySelector('.mainslider')) {
+    let mainSlider = new Swiper('.mainslider', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoHeight: true,
+        speed: 800,
+        pagination: {
+            el: '.mainslider__dotts',
+            clickable: true,
+        },
+    });
+    let mainSliderImages = document.querySelectorAll('.mainslider__image');
+    let mainSliderDotts = document.querySelectorAll('.mainslider__dotts .swiper-pagination-bullet');
 
+    for (let i = 0; i < mainSliderImages.length; i++) {
+        const mainSliderImage = mainSliderImages[i].querySelector('img').getAttribute('src');
+        mainSliderDotts[i].style.backgroundImage = `url(${mainSliderImage})`;
+    }
+}
+
+
+//=======================================================================================================================
 ;
 
 

@@ -1124,20 +1124,28 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: -27.5px 23px 0px 23px;
+  margin: -20px 0px 0px 0px;
   counter-reset: item;
 }
 
-.mainslider__dotts span {
+.mainslider__dotts .swiper-pagination-bullet {
+  margin: 0px 23px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   border: 2px solid #ffffff;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.mainslider__dotts span::after {
+.mainslider__dotts .swiper-pagination-bullet::after {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   font-family: 'Roboto-Black';
   font-size: 16px;
   position: absolute;
@@ -1158,6 +1166,10 @@
   color: #ffffff;
   counter-increment: item;
   content: counter(item);
+}
+
+.mainslider__dotts .swiper-pagination-bullet-active::after {
+  opacity: 1;
 }
 
 .content-mainslider {
