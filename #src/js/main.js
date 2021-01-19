@@ -101,7 +101,6 @@ for (let i = 0; i < checkboxCategories.length; i++) {
     checkboxItem.addEventListener("change", function (e) {
         checkboxItem.classList.toggle('_active');
         let categories = document.querySelectorAll('.categories-search__checkbox._active');
-        console.log(categories);
         if (categories.length > 0) {
             searchSelect.classList.add('_selected');
             let searchCount = document.querySelector('.search-page__count');
@@ -253,6 +252,7 @@ if (document.querySelector('.mainslider')) {
         spaceBetween: 0,
         autoHeight: true,
         speed: 800,
+        simulateTouch: true,
         pagination: {
             el: '.mainslider__dotts',
             clickable: true,
@@ -267,5 +267,64 @@ if (document.querySelector('.mainslider')) {
     }
 }
 
+if (document.querySelector('.products-slider')) {
+    let productsSlider = new Swiper('.products-slider', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoHeight: true,
+        speed: 800,
+        simulateTouch: true,
+        navigation: {
+            nextEl: '.products-slider__arrow_next',
+            prevEl: '.products-slider__arrow_prev'
+        },
+        pagination: {
+            el: '.products-slider__info',
+            type: 'fraction'
+        }
+    });
+}
+
+if (document.querySelector('.brands-slider')) {
+    let brandsSlider = new Swiper('.brands-slider__container', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 5,
+        spaceBetween: 0,
+        // autoHeight: true,
+        speed: 800,
+        simulateTouch: true,
+        loop: true,
+        navigation: {
+            nextEl: '.brands-slider__arrow_next',
+            prevEl: '.brands-slider__arrow_prev'
+        },
+        breakpoints: {
+            280: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            500: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 0,
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+            },
+            1180: {
+                slidesPerView: 5,
+                spaceBetween: 0,
+            },
+        }
+    });
+}
 
 //=======================================================================================================================

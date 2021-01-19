@@ -65,11 +65,7 @@
             }
         }
         .brands-slider {
-            &__body {
-                flex-wrap: wrap;
-            }
             &__slide {
-                flex: auto;
                 img {
                     filter: opacity(1);
                 }
@@ -107,6 +103,7 @@
             }
         }
     }
+    
 }
 
 @media (max-width: 992px) {
@@ -347,15 +344,6 @@
                 display: none;
             }
         }
-        .brands-slider {
-            &__body {
-                flex-wrap: nowrap;
-                overflow: hidden;
-            }
-            &__slide {
-                flex: 1 0 50%;
-            }
-        }
         .info-menu {
             &__body {
                 display: flex;
@@ -540,9 +528,7 @@
             }
         }
         .brands-slider {
-            &__slide {
-                flex: 1 0 100%;
-            }
+            
         }
     }
     .footer {
@@ -589,6 +575,24 @@
         padding: 0;
         font-size: 12px;
        
+    }
+    .mainslider {
+        &__dotts {
+            .swiper-pagination-bullet {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .content-mainslider {
+            &__title {
+                margin: 0px 0px 10px 0px;
+                line-height: normal;
+            }
+        }
+        .swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 4px;
+        }
+        
     }
     
 }
