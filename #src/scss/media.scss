@@ -363,6 +363,17 @@
                 margin: 0px 0px 10px 0px;
             }
         }
+        .catalog {
+            .navi-catalog {
+                &__pages {
+                    .pagging-catalog {
+                        &__list {
+                            margin: 0px 10px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -527,8 +538,10 @@
                 font-size: 30px;
             }
         }
-        .brands-slider {
-            
+        .catalog {
+            .navi-catalog {
+                display: none;
+            }
         }
     }
     .footer {
