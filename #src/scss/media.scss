@@ -797,6 +797,15 @@
             
         }
     }
+    .actions-product {
+        .quantity {
+            &__button {
+                &:hover {
+                    background: url('../img/icons/arrow-products.png') 0 0 / 100% no-repeat;
+                }
+            }
+        }
+    }
 }
 
     

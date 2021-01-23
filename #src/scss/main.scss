@@ -1805,6 +1805,7 @@ height: 39px;
     &__mainslide {
         border: 1px solid #f5f5f5;
         height: 308px;
+        max-width: 389px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1812,7 +1813,8 @@ height: 39px;
         margin: 0px 0px 13px 0px;
     }
     &__mainslider {
-       
+        // width: 15%;
+        // min-width: 0;
     }
     &__sale {
         position: absolute;
@@ -1832,15 +1834,15 @@ height: 39px;
     &__subslide {
         padding: 0px 6px;
         display: flex;
-        flex: 0 0 21.6%;
+        flex: 0 0 21.5%;
         
         &.swiper-slide-thumb-active {
-                border: 4px solid #f68038;
-                    transition: all 0.4s ease 0s;
-                .images-product__subimage {
-                    border: 0;
-                }
+            border: 4px solid #f68038;
+            transition: all 0.4s ease 0s;
+            .images-product__subimage {
+                border: 0;
             }
+        }
     }
     &__subimage {
         height: 68px;
@@ -1855,8 +1857,144 @@ height: 39px;
         }
     }
     &__subslider {
+        // width: 112%;
         margin: 0px -6px;
         display: flex;
         // min-width: 0;
+    }
+}
+.body-product {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 0px 12px 0px;
+    }
+    &__compare {
+        font-family: 'Roboto-Black';
+        font-size: 14px;
+        color:#666666;
+        text-transform: uppercase;
+        height: 33px;
+        display: flex;
+        border-radius: 25px;
+        justify-content: center;
+        align-items: center;
+        min-height: 33px;
+        padding: 0px 15px;
+        background-color: #f3f3f3;
+        span {
+            background: url('../img/icons/product-compare.png') left no-repeat;
+            padding: 0px 0px 0px 30px;
+            line-height: 21px;
+        }
+    }
+    &__stock {
+        font-family: 'Roboto-Light';
+        font-size: 14px;
+        color: #ffffff;
+        height: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f68038;
+        border-radius: 15px;
+        padding: 0px 10px;
+
+    }
+}
+.actions-product {
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 30px 0px;
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px -15px;
+    }
+    &__column {
+        padding: 0px 15px;
+    }
+    &__price {
+        font-family: 'Roboto-Black';
+        font-size: 24px;
+        color: #333333;
+        &::after {
+            font-size: 18px;
+        }
+        &_old {
+            font-family: 'Roboto-Light';
+            font-size: 18px;
+            color: #999999;
+            text-decoration: line-through;
+            &::after {
+                font-size: 14px;
+            }
+        }
+        
+    }
+    &__cart {
+        
+        display: flex;
+        align-items: center;
+        height: 57px;
+        padding: 0px 50px 0px 0px;
+        position: relative;
+        &::after {
+            content: '';
+            background: url('../img/icons/cart-orange.png') right no-repeat;
+            width: 57px;
+            height: 57px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        span {
+            padding: 0px 15px;
+            height: 34px;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Roboto-Black';
+            font-size: 14px;
+            color: #999999;
+            text-transform: uppercase;
+        }
+    }
+    .quantity {
+        width: 120px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        &__button {
+            flex: 0 0 20px;
+            position: relative;
+            cursor: pointer;
+            background: url('../img/icons/arrow-none.png') 0 0 / 100% no-repeat;
+            transition: all 0.1s ease 0s;
+            width: 22px;
+            height: 17px;
+            &_plus {
+                transform: rotate(-180deg);
+            }
+        }
+        &__input {
+            flex: 1 1 auto;
+            padding: 0px 12px;
+            height: 33px;
+            input{
+                height: 100%;
+                width: 100%;
+                border: 2px solid #e5e5e5;
+                text-align: center;
+                font-family: 'Roboto-Black';
+                font-size: 16px;
+                color: #999999;
+                outline: none;
+            }
+            
+        }
     }
 }

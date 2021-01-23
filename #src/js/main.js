@@ -353,3 +353,30 @@ if (document.querySelector('.images-product')) {
 }
 
 //=======================================================================================================================
+
+//=======================================================================================================================
+//---------------------------------------- Количество выбранного товара -------------------------------------------------
+if (document.querySelector('.quantity')) {
+    let quantityInput = document.querySelector('.quantity__input input');
+    let quantityButtons = document.querySelectorAll('.quantity__button');
+    let count = 1;
+    for (let i = 0; i < quantityButtons.length; i++) {
+        quantityButtons[i].addEventListener('click', function (e) {
+            if (e.target == quantityButtons[0]) {
+                if (+count == 1) {
+                    count = 1;
+                    quantityInput.value = +count;
+                }
+                else {
+                    count--;
+                    quantityInput.value = +count;
+                }
+            }
+            else if (e.target == quantityButtons[1]) {
+                count++;
+                quantityInput.value = +count;
+            }
+        })
+    }
+}
+//=======================================================================================================================
