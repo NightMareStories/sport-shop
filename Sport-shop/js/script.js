@@ -343,6 +343,7 @@ if (document.querySelector('.images-product')) {
         observeParents: true,
         slidesPerView: 1,
         spaceBetween: 0,
+        // autoHeight: true,
         speed: 800,
         simulateTouch: true,
         thumbs: {
