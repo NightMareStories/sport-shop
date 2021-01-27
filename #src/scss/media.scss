@@ -96,7 +96,13 @@
         
         .product {
             &__images {
-                flex: 0 0 330px;
+                // flex: 0 0 360px;
+            }
+            .images-product {
+                &__mainslide {
+                    // max-width: 360px;
+                    // flex: 0 0 99.7%;
+                }
             }
             .actions-product {
             &__column {
@@ -395,10 +401,24 @@
                 display: block;
             }
             &__images {
+                max-width: 100%;
                 margin: 0px 0px 30px 0px;
             }
             &__body {
                 padding: 0;
+            }
+            .images-product {
+                &__mainslide {
+                    flex: 0 0 100%;
+                }
+                &__subslide {
+                    flex: 0 0 20%;
+                    max-width: 150px;
+                    max-height: 100px;
+                }
+                &__subslides {
+                    justify-content: space-between;
+                }
             }
         }
     }
