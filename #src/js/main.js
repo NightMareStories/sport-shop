@@ -357,6 +357,7 @@ if (document.querySelector('.images-product')) {
 
 //=======================================================================================================================
 //---------------------------------------- Количество выбранного товара -------------------------------------------------
+
 if (document.querySelector('.quantity')) {
     let quantityInput = document.querySelector('.quantity__input input');
     let quantityButtons = document.querySelectorAll('.quantity__button');
@@ -379,5 +380,34 @@ if (document.querySelector('.quantity')) {
             }
         })
     }
+
 }
+
+//=======================================================================================================================
+
+//=======================================================================================================================
+//------------------------------------------ Табы на странице товара ----------------------------------------------------
+
+if (document.querySelector('.info-product')) {
+    let infoProductItem = document.querySelectorAll('.info-product__item');
+    infoProductItem.forEach(function (item) {
+        item.onclick = showTabs;
+    });
+    function showTabs() {
+        let data = this.getAttribute('data');
+        let infoProductBlock = document.querySelectorAll('.info-product__block');
+        let infoProductItem = document.querySelectorAll('.info-product__item');
+        infoProductBlock.forEach(function (item) {
+            item.classList.remove('_active');
+        });
+        infoProductItem.forEach(function (item) {
+            item.classList.remove('_active');
+        });
+        let infoProductBlocks = document.querySelector(`.info-product__block[data="${data}"]`);
+        let infoProductItems = document.querySelector(`.info-product__item[data="${data}"]`);
+        infoProductBlocks.classList.add('_active');
+        infoProductItems.classList.add('_active');
+    }
+}
+
 //=======================================================================================================================
