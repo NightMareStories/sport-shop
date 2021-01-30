@@ -26,7 +26,11 @@ height: 39px;
 
 }
 }
-
+._title {
+    font-family: 'UniSansHeavyCAPS';
+    font-size: 36px;
+    color: #dadada;
+}
 
 ._container {
         max-width: 1180px;
@@ -314,7 +318,6 @@ height: 39px;
     }
     &__title {
         flex: 1 1 auto;
-        font-family: 'UniSansHeavyCAPS';
         color: #ffffff;
         font-size: 30px;
     }
@@ -928,9 +931,7 @@ height: 39px;
     }
 }
 .side-title {
-    font-family: 'UniSansHeavyCAPS';
     font-size: 30px;
-    color: #dadada;
     letter-spacing: 0.75px;
 }
 .news-side {
@@ -1033,9 +1034,6 @@ height: 39px;
     }
     &__title {
         flex: 1 1 auto;
-        font-family: 'UniSansHeavyCAPS';
-        font-size: 36px;
-        color: #dadada;
         letter-spacing: 0.75px;
     }
     &__control {
@@ -1152,7 +1150,6 @@ height: 39px;
        
     }
     &__title {
-        font-family: 'UniSansHeavyCAPS';
         font-size: 30px;
         color: #22b7ca;
         letter-spacing: 0.75px;
@@ -1619,9 +1616,6 @@ height: 39px;
 }
 .catalog {
     &__title {
-        font-family: 'UniSansHeavyCAPS';
-        font-size: 30px;
-        color: #dadada;
         letter-spacing: 0.75px;
         line-height: 130%;
         margin: 0px 0px 20px 0px;
@@ -1778,8 +1772,6 @@ height: 39px;
 .product {
     &__title {
         margin: 0px 0px 18px 0px;
-        font-family: 'UniSansHeavyCAPS';
-        font-size: 36px;
         color: #333333;
         span {
             display: block;
@@ -1799,6 +1791,9 @@ height: 39px;
         flex: 1 1 auto;
         padding: 0px 0px 0px 30px;
        
+    }
+    &__info {
+        margin: 0px 0px 70px 0px;
     }
 }
 .images-product {
@@ -1975,39 +1970,40 @@ height: 39px;
             text-transform: uppercase;
         }
     }
-    .quantity {
-        width: 120px;
+    
+}
+.quantity {
+    width: 120px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    &__button {
+        flex: 0 0 20px;
+        position: relative;
+        cursor: pointer;
+        background: url('../img/icons/arrow-none.png') 0 0 / 100% no-repeat;
+        transition: all 0.1s ease 0s;
+        width: 22px;
+        height: 17px;
+        &_plus {
+            transform: rotate(-180deg);
+        }
+    }
+    &__input {
+        flex: 1 1 auto;
+        padding: 0px 12px;
         height: 33px;
-        display: flex;
-        align-items: center;
-        &__button {
-            flex: 0 0 20px;
-            position: relative;
-            cursor: pointer;
-            background: url('../img/icons/arrow-none.png') 0 0 / 100% no-repeat;
-            transition: all 0.1s ease 0s;
-            width: 22px;
-            height: 17px;
-            &_plus {
-                transform: rotate(-180deg);
-            }
+        input{
+            height: 100%;
+            width: 100%;
+            border: 2px solid #e5e5e5;
+            text-align: center;
+            font-family: 'Roboto-Black';
+            font-size: 16px;
+            color: #999999;
+            outline: none;
         }
-        &__input {
-            flex: 1 1 auto;
-            padding: 0px 12px;
-            height: 33px;
-            input{
-                height: 100%;
-                width: 100%;
-                border: 2px solid #e5e5e5;
-                text-align: center;
-                font-family: 'Roboto-Black';
-                font-size: 16px;
-                color: #999999;
-                outline: none;
-            }
-            
-        }
+        
     }
 }
 .include-product {
@@ -2111,5 +2107,72 @@ height: 39px;
     }
     &__label {
         color: #333333;
+    }
+}
+.same-products {
+    &__title {
+        margin: 0px 0px 30px 0px;
+    }
+}
+.checkout {
+    &__title {
+        margin: 0px 0px 15px 0px;
+    }
+}
+.order-checkout {
+    &__title {
+        margin: 0px 0px 15px 0px;
+    }
+    &__item {
+        
+    }
+}
+.item-order {
+    display: flex;
+    padding: 15px;
+    border: 1px solid #f5f5f5;
+    align-items: center;
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+    &__image {
+        flex: 0 0 110px;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__body {
+        flex: 1 1 auto;
+        padding: 0px 0px 0px 45px;
+    }
+    &__title {
+        font-family: 'Roboto-Light';
+        font-size: 14px;
+        color: #36949f;
+        font-weight: 700;
+        line-height: 16px;
+        display: inline-block;
+        margin: 0px 0px 10px 0px;
+        span {
+            font-family: 'Roboto-Black';
+        }
+    }
+    &__quantity {
+        padding: 0px 30px;
+    }
+    &__label {
+        font-family: 'Roboto-Light';
+        color: #999999;
+        font-size: 16px;
+        margin: 0px 0px 5px 0px;
+    }
+    &__price {
+        font-family: 'Roboto-Black';
+        font-size: 24px;
+        color: #333333;
+        &::after {
+            font-size: 16px;
+        }
     }
 }

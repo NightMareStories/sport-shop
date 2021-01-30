@@ -263,9 +263,12 @@
         }
     }
     .page {
-        // &__side {
-        //     margin: 0px 0px 30px 0px;
-        // }
+        &__news-side {
+            margin: 50px 0px 0px 0px;
+        }
+        &__reviews-side {
+            margin: 50px 0px 0px 0px;
+        }
         .menu-page {
             &__link {
                 &::after {
@@ -308,6 +311,7 @@
                 padding: 20px 20px 20px 20px;
             }
         }
+        
     }
     .filter {
         &__title {
@@ -654,6 +658,24 @@
         }
         
     }
+    .product {
+        &__info {
+            margin: 0px -10px 30px -10px;
+        }
+        .info-product {
+            &__body {
+                padding: 25px 5px;
+                background-color: #ffffff;
+            }
+            &__item {
+                padding: 0;
+                flex: 1 1 auto;
+            }
+            &__label {
+                font-size: 13px;
+            }
+        }
+    }
     
 }
 @media (min-width: 992px) {
@@ -843,13 +865,11 @@
             }
             
         }
-    }
-    .actions-product {
-        .quantity {
-            &__button {
-                &:hover {
-                    background: url('../img/icons/arrow-products.png') 0 0 / 100% no-repeat;
-                }
+    } 
+    .quantity {
+        &__button {
+            &:hover {
+                background: url('../img/icons/arrow-products.png') 0 0 / 100% no-repeat;
             }
         }
     }
