@@ -403,9 +403,55 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="checkout">
+                <form class="checkout">
                     <div class="checkout__title _title">Оформление заказа</div>
-                    <div class="checkout__content"></div>
+                    <div class="checkout__content content-checkout">
+                        <nav class="content-checkout__nav">
+                            <div class="content-checkout__item _active"><span>Быстрый заказ</span></div>
+                            <div class="content-checkout__item"><span>Курьером по москве и мо</span></div>
+                            <div class="content-checkout__item"><span>Доставка в регионы</span></div>
+                        </nav>
+                        <div class="content-checkout__body">
+                            <div class="content-checkout__block _active">
+                                <div class="content-checkout__form form-checkout">
+                                    <div class="form-checkout__column">
+
+                                        <div class="form-checkout__line">
+                                            <div class="form-checkout__label">Имя:&nbsp;<span>*</span></div>
+                                            <div class="form-checkout__input">
+                                                <input type="text" class="input">
+                                            </div>
+                                        </div>
+                                        <div class="form-checkout__line">
+                                            <div class="form-checkout__label">Моб. телефон:&nbsp;<span>*</span></div>
+                                            <div class="form-checkout__input">
+                                                <input type="text" class="input">
+                                            </div>
+                                        </div>
+                                        <div class="form-checkout__line">
+                                            <div class="form-checkout__label">Ваш E-mail: </div>
+                                            <div class="form-checkout__input">
+                                                <input type="text" class="input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-checkout__column">
+                                        <div class="form-checkout__text">
+                                            <p><span>*</span>Поля, обязательные для заполнения</p>
+                                            <p>Отправка товара производится только после 100% оплаты
+                                                товара. Стоимость доставки возможно оплатить при
+                                                получении заказа.</p>
+                                            <p><span>*</span> Интернет-магазин не несет ответственности за задержку
+                                                доставки заказа, связанную с работой курьерских служб DPD
+                                                и EMS Почты России.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-checkout__block"></div>
+                            <div class="content-checkout__block"></div>
+                        </div>
+                    </div>
                     <div class="checkout__order order-checkout">
                         <div class="order-checkout__title _title">Ваш заказ</div>
                         <div class="order-checkout__items">
@@ -420,12 +466,40 @@
                                         <div class="item-order__price rub">64 990</div>
                                     </div>
                                 </div>
-                                <div class="item-order__quantity quantity">
-                                    <div class="quantity__button quantity__button_minus"></div>
-                                    <div class="quantity__input">
-                                        <input type="text" value="1">
+                                <div class="item-order__quantity">
+                                    <div class="quantity">
+                                        <div class="quantity__button quantity__button_minus"></div>
+                                        <div class="quantity__input">
+                                            <input type="text" value="1">
+                                        </div>
+                                        <div class="quantity__button quantity__button_plus"></div>
                                     </div>
-                                    <div class="quantity__button quantity__button_plus"></div>
+                                </div>
+                                <div class="item-order__total">
+                                    <div class="item-order__label">Всего: </div>
+                                    <div class="item-order__price rub">64 990</div>
+                                </div>
+                                <a href="" class="item-order__delete"></a>
+                            </div>
+                            <div class="order-checkout__item item-order">
+                                <div class="item-order__content">
+                                    <a href="" class="item-order__image">
+                                        <img src="img/goods/running-track-2.png" alt="">
+                                    </a>
+                                    <div class="item-order__body">
+                                        <a href="" class="item-order__title"><span>BH Fitness F1 G6414V</span> Беговая
+                                            дорожка</a>
+                                        <div class="item-order__price rub">64 990</div>
+                                    </div>
+                                </div>
+                                <div class="item-order__quantity">
+                                    <div class="quantity">
+                                        <div class="quantity__button quantity__button_minus"></div>
+                                        <div class="quantity__input">
+                                            <input type="text" value="1">
+                                        </div>
+                                        <div class="quantity__button quantity__button_plus"></div>
+                                    </div>
                                 </div>
                                 <div class="item-order__total">
                                     <div class="item-order__label">Всего: </div>
@@ -438,10 +512,10 @@
                             <div class="order-checkout__total">
                                 Итого: <span class="rub">120 000</span>
                             </div>
-                            <a href="" class="order-checkout__btn">Оформить заказ</a>
+                            <button type="submit" class="order-checkout__btn">Оформить заказ</button>
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class=" page__content-side-in"></div>
             </div>
 

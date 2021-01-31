@@ -873,6 +873,20 @@
             }
         }
     }
+    .item-order {
+        &__delete {
+            &:hover {
+                background: url('../img/icons/order-delete-hover.png') 0 0 no-repeat;
+            }
+        }
+    }
+    .order-checkout {
+        &__btn {
+            &:hover {
+                background-color: #1ab9ce;
+            }
+        }
+    }
 }
 
     
