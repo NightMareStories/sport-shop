@@ -2239,6 +2239,11 @@ height: 39px;
     &__body {
         padding: 30px 0px 0px 0px;
     }
+    &__block {
+        &._active {
+            display: none;
+        }
+    }
     &__item {
         height: 49px;
         color: #72c9d4;
@@ -2286,8 +2291,72 @@ height: 39px;
             color: #f68038;
         }
     }
-    &__input {
-        flex: 1 1 auto;
-        padding: 0px 0px 0px 15px;
+    &__checkbox {
+        display: block;
+        margin: 0px 0px 15px 0px;
+        &:last-child {
+            margin: 0px 0px 0px 0px;
+        }
+        .checkbox__input {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            &:checked + .checkbox__text:before {
+                border: 2px solid #009aaf;
+            }
+            &:checked + .checkbox__text:after {
+                content: '';
+                position: absolute;
+                left: 4.5px;
+                top: 4.5px;
+                width: 10px;
+                height: 10px;
+                background-color: #53b5de;
+            }
+        }
+        .checkbox__text {
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            font-size: 12px;
+            color: #666666;
+            font-family: 'Roboto-Light';
+            line-height: calc(15/12);
+            cursor: pointer;
+            &::before {
+                content: '';
+                align-self: flex-start;
+                margin: 0px 14px 0px 0px;
+                flex: 0 0 15px;
+                left: 0;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                background-color: #ffffff;
+                border: 2px solid #dadada;
+            }
+        }
+    }
+    // &__input {
+    //     flex: 1 1 auto;
+    //     padding: 0px 0px 0px 15px;
+    // }
+    &__text {
+        font-family: 'Roboto-Light';
+        font-size: 12px;
+        color: #666666;
+        font-weight: 600;
+        line-height: 18px;
+        span {
+            color: #f68038;
+        }
+        p {
+            margin: 0px 0px 20px 0px;
+            &:last-child {
+                margin: 0px 0px 0px 0px;
+            }
+        }
     }
 }
